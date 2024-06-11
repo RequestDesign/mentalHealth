@@ -10,7 +10,7 @@
     <div class="root">
       <h1>Mental Health</h1>
       <h2>готовые страницы:</h2>
-      <ol>
+      <ul>
         <li class="tl1">текст</li>
         <li class="tl2">текст</li>
         <li class="tl3">текст</li>
@@ -20,9 +20,44 @@
         <li class="txt16 txt16_bold">текст</li>
         <li class="txt16 txt16_medium">текст</li>
         <li class="txt16 txt16_caps">текст</li>
-      </ol>
-
-     
+        <li class="txt16 txt16_caps">
+          <button class="button-shadow button-shadow--green">
+            <span class="button-shadow-text txt16 txt16_caps">Подобрать психолога</span>
+            <span class="button-shadow-svg-box">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="txt16 txt16_caps">
+          <button class="button-shadow button-shadow--white">
+            <span class="button-shadow-text txt16 txt16_caps">Подобрать психолога</span>
+            <span class="button-shadow-svg-box">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="txt16 txt16_caps">
+          <button class="button-border">
+            <span class="button-shadow-text txt16 txt16_caps">получить консультацию</span>
+          </button>
+        </li>
+      </ul>
     </div>
     <style>
       @charset "UTF-8";
@@ -60,6 +95,10 @@
       ul,
       ol {
         margin-bottom: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
       }
       ul li,
       ol li {
