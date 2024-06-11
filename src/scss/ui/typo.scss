@@ -1,59 +1,67 @@
-// .tl1 {
-//   font-family: 'Actay';
-//   font-weight: 400;
-//   font-size: 6rem;
-//    @include small-tablet {
-//     font-size: 6.8rem;
-//   }
-// }
-// .tl2 {
-//   font-family: 'Actay';
-//   font-weight: 400;
-//   font-size: 5rem;
-//    @include small-tablet {
-//     font-size: 6rem;
-//   }
-// }
-// .tl3 {
-//   font-family: 'Actay';
-//   font-weight: 400;
-//   font-size: 4rem;
-//    @include small-tablet {
-//     font-size: 4.8rem;
-//   }
-// }
-// .tl4 {
-//   font-family: 'OpenSans';
-//   font-weight: 600;
-//   font-size: 2rem;
-//    @include small-tablet {
-//     font-size: 3.6rem;
-//   }
-// }
+.tl1 {
+  font-family: 'Muller';
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 7.6rem;
+  }
+}
+.tl2 {
+  font-family: 'Muller';
+  font-weight: 500;
+  font-size: 5.4rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 6.8rem;
+  }
+}
+.tl3 {
+  font-family: 'Muller';
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 130%;
+  @include small-tablet {
+    font-size: 4.4rem;
+  }
+}
+.tl4 {
+  font-family: 'Geometria';
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 130%;
+  @include small-tablet {
+    font-size: 3.6rem;
+  }
+}
 
-// // --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 
-// .txt20 {
-//   font-family: 'OpenSans';
-//   font-weight: 400;
-//   font-size: 2rem;
-//   @include small-tablet {
-//   }
-// }
-// .txt18 {
-//   font-family: 'OpenSans';
-//   font-size: 1.8rem;
-//   font-weight: 400;
-//   &_bold{
-//     font-weight: 600;
-//   }
-//   @include small-tablet {
-//   }
-// }
-// .txt16 {
-//   font-family: 'OpenSans';
-//   font-weight: 400;
-//   font-size: 1.6rem;
-//   @include small-tablet {
-//   }
-// }
+.txt20 {
+  font-family: 'Geometria';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 130%;
+  @include small-tablet {
+    font-size: 3.2rem;
+  }
+}
+.txt16 {
+  font-family: 'Geometria';
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 400;
+  &_bold {
+    font-weight: 700;
+  }
+  &_medium {
+    font-weight: 500;
+  }
+  &_caps {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  @include small-tablet {
+    font-size: 2.8rem;
+  }
+}
