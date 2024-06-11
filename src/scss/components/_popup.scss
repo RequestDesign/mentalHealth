@@ -1,0 +1,116 @@
+body::before {
+  content: '';
+  position: fixed;
+  z-index: 250;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease 0s;
+  -webkit-backdrop-filter: blur(52px);
+  backdrop-filter: blur(52px);
+  background: rgba(218, 218, 218, 0.3);
+}
+.popup-show body::before {
+  opacity: 1;
+}
+.popup_show {
+  z-index: 310 !important;
+  visibility: visible !important;
+  overflow: auto;
+  pointer-events: auto;
+}
+.popup_show .popup__content {
+  visibility: visible;
+  transform: scale(1);
+}
+
+// --------------------------------------------------------------------------
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 3.2rem;
+  visibility: hidden;
+  transition: visibility 0.8s ease 0s;
+  z-index: 300;
+  ._loaded & {
+    display: block;
+  }
+  @include small-tablet {
+    padding: 2rem;
+  }
+
+  // .popup__wrapper
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  // .popup__content
+
+  &__content {
+    width: 100%;
+    max-width: fit-content;
+    border-radius: 4rem;
+    visibility: hidden;
+    transform: scale(0);
+    transition: transform 0.8s ease 0s;
+    position: relative;
+    .lock & {
+      visibility: visible;
+    }
+  }
+
+  // .popup__body
+
+  &__body {
+    display: flex;
+    // background-color: $white;
+    padding: 6rem;
+    min-width: 76.9rem;
+  }
+
+  // .popup__body-close-btn
+
+  &__body-close-btn {
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    @include small-tablet {
+      top: 2.4rem;
+      right: 2.4rem;
+      width: 4.8rem;
+      height: 4.8rem;
+
+      & svg {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+}

@@ -1,53 +1,53 @@
 @import './mixins';
 
-// $black: #191817;
-// $green: #00a499;
-// $white: #ffffff;
-// $gray: #dadadc;
-// $gray-text: #aeaeae;
-// $background: #eeeef0;
+$black: #3e4042;
+$blue: #365f7b;
+$green: #05aeb5;
+$white: #ffffff;
+$bg: #eaeff2;
+$gray: #afbfca;
+$light-gray: #e2edf4;
 
-// body
-// body {
-//   background-color: $background;
-//   color: $black;
-//   font-family: 'OpenSans';
+body {
+  background-color: $bg;
+  color: $black;
+  font-family: 'Geometria';
 
-//   .lock & {
-//     overflow: hidden;
-//     touch-action: none;
-//   }
-// }
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
 
-// .wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-//   justify-content: space-between;
-//   position: relative;
-//   // overflow: hidden;
-// }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative;
+  // overflow: hidden;
+}
 
-// * {
-//   // outline:  1px solid red;
-// }
-// // main
-// main {
-//   flex-grow: 1;
+* {
+  // outline:  1px solid red;
+}
+// main
+main {
+  flex-grow: 1;
 
-//   section {
-//     margin: 20rem 0 0;
-//     @include small-tablet {
-//       margin: 22rem 0 0;
-//     }
-//     &._first {
-//       margin: 16.4rem 0 0rem;
-//       @include small-tablet {
-//         margin: 21.4rem 0 0rem;
-//       }
-//     }
-//   }
-// }
+  // section {
+  //   margin: 20rem 0 0;
+  //   @include small-tablet {
+  //     margin: 22rem 0 0;
+  //   }
+  //   &._first {
+  //     margin: 16.4rem 0 0rem;
+  //     @include small-tablet {
+  //       margin: 21.4rem 0 0rem;
+  //     }
+  //   }
+  // }
+}
 
 .desktop {
   display: block;
@@ -66,3 +66,6 @@
 }
 
 @import './ui/ui';
+@import './components/_footer';
+@import './components/_header';
+@import './components/_popup';
