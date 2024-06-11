@@ -1,0 +1,68 @@
+@import './mixins';
+
+// $black: #191817;
+// $green: #00a499;
+// $white: #ffffff;
+// $gray: #dadadc;
+// $gray-text: #aeaeae;
+// $background: #eeeef0;
+
+// body
+// body {
+//   background-color: $background;
+//   color: $black;
+//   font-family: 'OpenSans';
+
+//   .lock & {
+//     overflow: hidden;
+//     touch-action: none;
+//   }
+// }
+
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
+//   justify-content: space-between;
+//   position: relative;
+//   // overflow: hidden;
+// }
+
+// * {
+//   // outline:  1px solid red;
+// }
+// // main
+// main {
+//   flex-grow: 1;
+
+//   section {
+//     margin: 20rem 0 0;
+//     @include small-tablet {
+//       margin: 22rem 0 0;
+//     }
+//     &._first {
+//       margin: 16.4rem 0 0rem;
+//       @include small-tablet {
+//         margin: 21.4rem 0 0rem;
+//       }
+//     }
+//   }
+// }
+
+.desktop {
+  display: block;
+
+  @media (max-width: 48em) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 48em) {
+    display: block;
+  }
+}
+
+@import './ui/ui';

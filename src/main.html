@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <include src="./components/_header.html"></include>
+      <include src="./components/_popup.html"></include>
+      <main>
+        <include src="./components/_main-banner.html"></include>
+        <include src="./components/_numbers.html"></include>
+        <include src="./components/_automatics.html"></include>
+        <include src="./components/_spheres.html"></include>
+        <section class="lider">
+          <div class="lider__container container">
+            <div class="lider__background-text desktop">11 000</div>
+            <div class="lider__box">
+              <div class="lider__title tl1">Лидер по роботизированной сварке</div>
+              <div class="lider__text txt20">
+                В 2021 году было продано более 11 000 единиц роботизированных сварочных источников питания, их
+                доля на рынке составила почти 30%, и они 6 лет подряд занимали 1-е место на китайском рынке
+              </div>
+            </div>
+          </div>
+        </section>
+        <include src="./components/_main-news.html"></include>
+        <!-- <include src="./components/_where-buy.html"></include> -->
+        <include
+          src="./components/_application.html"
+          data-text='{"section": { "class": "application--anim"}}'
+        ></include>
+      </main>
+      <include src="./components/_footer.html"></include>
+    </div>
+  </body>
+</html>
