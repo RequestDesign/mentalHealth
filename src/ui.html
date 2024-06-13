@@ -20,7 +20,7 @@
         <li class="txt16 txt16_bold">текст</li>
         <li class="txt16 txt16_medium">текст</li>
         <li class="txt16 txt16_caps">текст</li>
-        <li class="txt16 txt16_caps">
+        <li class="">
           <button class="button-shadow button-shadow--green">
             <span class="button-shadow-text txt16 txt16_caps">Подобрать психолога</span>
             <span class="button-shadow-svg-box">
@@ -36,7 +36,7 @@
             </span>
           </button>
         </li>
-        <li class="txt16 txt16_caps">
+        <li class="">
           <button class="button-shadow button-shadow--white">
             <span class="button-shadow-text txt16 txt16_caps">Подобрать психолога</span>
             <span class="button-shadow-svg-box">
@@ -52,7 +52,7 @@
             </span>
           </button>
         </li>
-        <li class="txt16 txt16_caps">
+        <li class="">
           <button class="button-border">
             <span class="button-shadow-text txt16 txt16_caps">получить консультацию</span>
           </button>
@@ -74,6 +74,37 @@
               />
             </svg>
           </div>
+        <li class="">
+          <label class=" input-group">
+            <span class="form__input-wrapper">
+              <input
+                class="input--name  _input-black"
+                type="text"
+                data-validate
+                data-required="name"
+                autocomplete="off"
+                name="form[]"
+                placeholder="Имя"
+              />
+            </span>
+            <span class="error-span">Поле заполнено неверно</span>
+          </label>
+        </li>
+        <li class="">
+          <label class=" input-group">
+            <span class="form__input-wrapper">
+              <input
+                class="input--name  _input-white"
+                type="text"
+                data-validate
+                data-required="name"
+                autocomplete="off"
+                name="form[]"
+                placeholder="Имя"
+              />
+            </span>
+            <span class="error-span">Поле заполнено неверно</span>
+          </label>
         </li>
       </ul>
     </div>
@@ -90,12 +121,12 @@
       body {
         margin: 0;
         padding: 0;
-        height: 100%;
+        /* height: 100%; */
         width: 100%;
         /* min-width: 32rem; */
         background: #eeeef0;
         color: #191817;
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         justify-content: center;
       }
