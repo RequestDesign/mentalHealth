@@ -1,0 +1,307 @@
+.main-banner {
+    margin-top: 0;
+  // .main-banner__container
+
+  &__container {
+    max-width: 192rem;
+    width: 100%;
+    border-radius: 0 0 8rem 8rem;
+    background-color: $white;
+    overflow: hidden;
+    @include small-tablet {
+      padding: 0;
+      border-radius: 0 0 4rem 4rem;
+    }
+  }
+
+  // .main-banner__inner
+
+  &__inner {
+    width: 160.5rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 14.1rem 0 6.4rem;
+    position: relative;
+    @include small-tablet {
+      width: 100%;
+      padding: 20.4rem 2rem 4rem;
+      gap: 52.8rem;
+    }
+  }
+
+  // .main-banner__title-box
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.2rem;
+    @include small-tablet {
+      margin-bottom: 0;
+      gap: 3.2rem;
+    }
+  }
+
+  // .main-banner__category
+
+  &__category {
+    padding: 0.8rem 1.6rem;
+    border: 0.2rem solid #125989;
+    border-radius: 100rem;
+    color: #125989;
+    @include small-tablet {
+      margin-bottom: 0;
+      gap: 3.2rem;
+      padding: 0.8rem 2.4rem;
+      border-radius: 200rem;
+    }
+  }
+
+  // .main-banner__title
+
+  &__title {
+    width: 128.8rem;
+    overflow: hidden;
+    & span {
+      display: block;
+    }
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  // .main-banner__content-box
+
+  &__content-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .main-banner__goal-wrapper
+
+  &__goal-wrapper {
+    overflow: hidden;
+  }
+
+  // .main-banner__goal-box
+
+  &__goal-box {
+    width: 37.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  // .main-banner__goal-text
+
+  &__goal-text {
+  }
+
+  // .main-banner__experience-box
+
+  &__experience-box {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  // .main-banner__experience-img-box
+
+  &__experience-img-box {
+    width: 9.2rem;
+    height: 9.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .main-banner__experience-text-box
+
+  &__experience-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 18rem;
+  }
+
+  // .main-banner__experience-title
+
+  &__experience-title {
+  }
+
+  // .main-banner__experience-desc
+
+  &__experience-desc {
+  }
+
+  // .main-banner__grade-wrapper
+
+  &__grade-wrapper {
+    overflow: hidden;
+  }
+
+  // .main-banner__grade-box
+
+  &__grade-box {
+    width: 37.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.9rem;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  // .main-banner__grade-info-box
+
+  &__grade-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    justify-content: flex-end;
+  }
+
+  // .main-banner__grade-img-wrapper
+
+  &__grade-img-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: flex-end;
+  }
+
+  // .main-banner__img-box
+
+  &__img-box {
+    width: 2.6rem;
+    height: 2.6rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .main-banner__grade-info-text
+
+  &__grade-info-text {
+  }
+
+  // .main-banner__grade-count-box
+
+  &__grade-count-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.8rem;
+  }
+
+  // .main-banner__grade-count-title
+
+  &__grade-count-title {
+    font-family: 'Geometria';
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
+
+  // .main-banner__grade-count-text
+
+  &__grade-count-text {
+  }
+
+  // .main-banner__btn-box
+
+  &__btn-box {
+    padding: 3.2rem;
+    border-radius: 10rem;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    width: fit-content;
+    align-self: center;
+    position: relative;
+    z-index: 5;
+    @include small-tablet {
+      flex-direction: column;
+      width: 100%;
+      padding: 3.2rem 9rem;
+      border-radius: 4rem;
+    }
+  }
+
+  // .main-banner__btn
+
+  &__btn {
+    align-items: center;
+    justify-content: center;
+    @include small-tablet {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // .main-banner__img-wrapper
+
+  &__img-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    @include small-tablet {
+      width: 77rem;
+      margin: 0 -1rem;
+      overflow: hidden;
+      min-height: 90rem;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  // .main-banner__img-bg
+
+  &__img-bg {
+    width: 103.6rem;
+    height: 45.7rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 132.4rem;
+      height: 68rem;
+    }
+  }
+  // .main-banner__img-photo
+
+  &__img-photo {
+    width: 49.2rem;
+    height: 62.7rem;
+    height: 77.5rem;
+    position: absolute;
+    left: 50%;
+    bottom: -14.8rem;
+    transform: translateX(-50%);
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @include small-tablet {
+      width: 62.8rem;
+      height: 99rem;
+      bottom: -9.2rem;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 .button-shadow {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
   padding: 2rem 3.2rem;
   border-radius: 10rem;
@@ -72,6 +73,7 @@
   }
 }
 .button-border {
+  display: block;
   padding: 2rem 3.2rem;
   border-radius: 10rem;
   border: 0.2rem solid $blue;
