@@ -1,0 +1,378 @@
+.footer {
+}
+.footer-form {
+  // .footer-form__inner
+  margin-bottom: -16.1rem;
+  position: relative;
+  z-index: 5;
+  @include small-tablet {
+    margin-bottom: -3.2rem;
+  }
+  &__inner {
+    border-radius: 8rem;
+    background: $blue url(./assets/images/footer-form-bg.svg) no-repeat center/cover;
+    padding: 6.4rem;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4.8rem;
+      padding: 3.2rem;
+      border-radius: 4rem;
+      background: $blue url(./assets/images/footer-form-bg-mob.svg) no-repeat center/cover;
+    }
+  }
+
+  // .footer-form__content-box
+
+  &__content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      gap: 3.2rem;
+    }
+  }
+
+  // .footer-form__title
+
+  &__title {
+  }
+
+  // .footer-form__info-box
+
+  &__info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .footer-form__info-text
+
+  &__info-text {
+  }
+
+  // .footer-form__info-link-box
+
+  &__info-link-box {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 4.8rem;
+    }
+  }
+
+  // .footer-form__info-link
+
+  &__info-link {
+  }
+
+  // .footer-form__info-link-svg-box
+
+  &__info-link-svg-box {
+    width: 3.2rem;
+    height: 3.2rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+
+  // .footer-form__form
+
+  &__form {
+    width: 53.2rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  // .footer-form__form-input-wrapper
+
+  &__form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .footer-form__form-input-box
+
+  &__form-input-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // .footer-form__label
+
+  &__label {
+  }
+
+  // .footer-form__form-input
+
+  &__form-input {
+  }
+
+  // .footer-form__btn
+
+  &__btn {
+    @include small-tablet {
+      width: fit-content;
+    }
+  }
+}
+
+.footer-content {
+  // .footer-content__container
+
+  &__container {
+    max-width: 192rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 8rem 8rem 0 0;
+    @include small-tablet {
+      border-radius: 4rem 4rem 0 0;
+      padding: 0;
+    }
+  }
+
+  // .footer-content__inner
+
+  &__inner {
+  }
+
+  // .footer-content__top
+
+  &__top {
+    padding: 22.5rem 0 6.4rem;
+    width: 160.4rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    @include small-tablet {
+      padding: 11.2rem 3.2rem 4.8rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4.8rem;
+    }
+  }
+
+  // .footer-content__top-logo
+
+  &__top-logo {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    justify-self: flex-end;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    @include small-tablet {
+      font-size: 6.8rem;
+    }
+  }
+
+  // .footer-content__nav
+
+  &__nav {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: repeat(3, 37.5rem);
+    gap: 3.2rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+  }
+
+  // .footer-content__nav-list-box
+
+  &__nav-list-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 0;
+    }
+  }
+
+  // .footer-content__nav-list-title-box
+
+  &__nav-list-title-box {
+    pointer-events: none;
+    @include small-tablet {
+      pointer-events: fill;
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    &.isActive {
+      & .footer-content__nav-list-svg-box {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  // .footer-content__nav-list-title
+
+  &__nav-list-title {
+  }
+
+  // .footer-content__nav-list-svg-box
+
+  &__nav-list-svg-box {
+    @include small-tablet {
+      transition: transform 0.5s;
+      width: 2.4rem;
+      height: 1.4rem;
+      margin-top: 0.5rem;
+      flex-shrink: 0;
+      & svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__nav-list-wrapper {
+    @media (min-width: 48em) {
+      display: block !important;
+    }
+    display: none;
+  }
+  // .footer-content__nav-list
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      gap: 2.4rem;
+      margin-top: 3.2rem;
+    }
+  }
+
+  // .footer-content__nav-item
+
+  &__nav-item {
+  }
+
+  // .footer-content__nav-link
+
+  &__nav-link {
+  }
+
+  // .footer-content__link-box
+
+  &__link-box {
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2.4rem;
+    }
+  }
+
+  // .footer-content__link
+
+  &__link {
+  }
+
+  // .footer-content__bottom
+
+  &__bottom {
+    padding: 3.8rem 14.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.2rem solid $bg;
+    @include small-tablet {
+      padding: 5rem 0 4.8rem;
+      border-top: 0.4rem solid $bg;
+      margin: 0 3.2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3.2rem;
+    }
+  }
+
+  // .footer-content__copy
+
+  &__copy {
+  }
+
+  // .footer-content__bottom-text
+
+  &__bottom-text {
+  }
+
+  // .footer-content__request
+
+  &__request {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    @include small-tablet {
+      gap: 1.6rem;
+    }
+  }
+
+  // .footer-content__request-img-box
+
+  &__request-img-box {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+
+  // .footer-content__request-text-logo
+
+  &__request-text-logo {
+    font-family: 'Geometria';
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 140%;
+    letter-spacing: 0.04em;
+    @include small-tablet {
+      font-size: 3rem;
+    }
+  }
+}

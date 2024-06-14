@@ -35,18 +35,18 @@ body {
 main {
   flex-grow: 1;
 
-  // section {
-  //   margin: 20rem 0 0;
-  //   @include small-tablet {
-  //     margin: 22rem 0 0;
-  //   }
-  //   &._first {
-  //     margin: 16.4rem 0 0rem;
-  //     @include small-tablet {
-  //       margin: 21.4rem 0 0rem;
-  //     }
-  //   }
-  // }
+  section {
+    margin: 20rem 0 0;
+    @include small-tablet {
+      margin: 22rem 0 0;
+    }
+    &._first {
+      margin: 16.4rem 0 0rem;
+      @include small-tablet {
+        margin: 21.4rem 0 0rem;
+      }
+    }
+  }
 }
 
 .desktop {

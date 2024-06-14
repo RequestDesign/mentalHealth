@@ -1,0 +1,114 @@
+.help-with {
+  // .help-with__inner
+
+  &__inner {
+    padding: 6.4rem;
+    border-radius: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    background-color: $white;
+    overflow: hidden;
+    @include small-tablet {
+      padding: 4.8rem 2rem;
+      border-radius: 4rem;
+      gap: 6.4rem;
+    }
+  }
+
+  // .help-with__title
+
+  &__title {
+    align-self: center;
+    text-align: center;
+  }
+
+  // .help-with__list-box
+
+  &__list-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem 2rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+  }
+
+  // .help-with__item
+
+  &__item {
+    padding: 2rem 3.2rem;
+    border-radius: 10rem;
+    @include small-tablet {
+      border-radius: 20rem;
+    }
+    &--green {
+      border: 0.2rem solid $green;
+      color: $green;
+      background-color: $white;
+    }
+
+    // .help-with__item--blue
+
+    &--blue {
+      border: 0.2rem solid $blue;
+      color: $white;
+      background-color: $blue;
+    }
+
+    // &:nth-child(1) {
+    //     transform: rotate(5deg) translateY(120%);
+    //   @include small-tablet {
+    //     transform: rotate(-8deg) translateY(205% );
+    //   }
+    // }
+    // &:nth-child(2) {
+    //     transform: rotate(-11deg) translateY(140%);
+    //   @include small-tablet {
+    //     transform: rotate(-8deg) translateY(165% ) translateX(25%);
+    //   }
+    // }
+    // &:nth-child(3) {
+    //     transform: rotate(12deg) translateY(110%) translateX(15%);
+    //   @include small-tablet {
+    //     transform: rotate(8deg) translateY(120% ) translateX(10%);
+    //   }
+    // }
+    // &:nth-child(4) {
+    //     transform: rotate(8deg) translateY(60%);
+    //   @include small-tablet {
+    //     transform: rotate(-7deg) translateY(110% ) translateX(-10%);
+    //   }
+    // }
+    // &:nth-child(5) {
+    //     transform: rotate(-9deg) translateY(40%);
+    //   @include small-tablet {
+    //     transform: rotate(-13deg) translateY(85%) translateX(25%);
+    //   }
+    // }
+    // &:nth-child(6) {
+    //     transform: rotate(-12deg) translateY(70%);
+    //   @include small-tablet {
+    //     transform: rotate(-6deg) translateY(35%);
+    //   }
+    // }
+    // &:nth-child(7) {
+    //     transform: rotate(-9deg) translateY(65%);
+    //   @include small-tablet {
+    //     transform: rotate(5deg);
+    //   }
+    // }
+    // &:nth-child(8) {
+    //   transform: rotate(-8deg);
+    // }
+    // &:nth-child(9) {
+    //   transform: rotate(13deg);
+    // }
+    // &:nth-child(10) {
+    //   transform: rotate(-10deg);
+    // }
+  }
+}
