@@ -122,7 +122,7 @@ function wowAnim() {
   const wow = new WOW({
     boxClass: 'wow',
     animateClass: 'animate__animated',
-    offset: 100,
+    offset: 200,
     mobile: true,
     live: true
   });
@@ -257,7 +257,7 @@ function helpWithAnimMob() {
   const section = document.querySelector('.help-with'),
     items = document.querySelectorAll('.help-with__item'),
     title = document.querySelectorAll('.help-with__title'),
-    duration = 0.5;
+    duration = 0.8;
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -356,7 +356,15 @@ function footerDropdown() {
   titles.forEach((title) => {
     title.addEventListener('click', () => {
       $(title).parent().find('.footer-content__nav-list-wrapper').slideToggle();
-      $(title).toggleClass('isActive')
+      $(title).toggleClass('isActive');
     });
   });
 }
+
+
+//открытие модалки скрочной помощи для страницы каталога с психологами
+// function openModalHelp() {
+//   if (document.querySelector('.main')) {
+//     modules.popup.open('#popup__help');
+//   }
+// }
