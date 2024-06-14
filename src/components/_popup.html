@@ -21,16 +21,225 @@
           </svg>
         </button>
         <div class="popup__body-content-box">
-          <p class="popup__body-content-box-title tl2">Заявка отправлена</p>
-          <p class="popup__body-content-box-desk txt20">
-            Ваша заявка успешно отправлена! Наш специалист
-            <br class="desktop" />
-            свяжется с вами в ближайшее время.
-          </p>
-          <button data-close class="popup__btn button txt18 txt18_bold">вернуться на главную</button>
+          <div class="popup__body-content-box-title-box">
+            <p class="popup__body-content-box-title tl1">Ваша заявка отправлена!</p>
+            <p class="popup__body-content-box-desk txt20">
+              Спасибо, что оставили заявку. Наш менеджер свяжется с Вами в ближайшее время.
+            </p>
+          </div>
+
+          <button data-close class="popup__btn button-shadow button-shadow--green">
+            <span class="button-shadow-text txt16 txt16_caps">На главную</span>
+            <span class="button-shadow-svg-box">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div id="popup__feedback" aria-hidden="true" class="popup popup--feedback">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body">
+        <button data-close type="button" class="popup__body-close-btn">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M28 4L4 28"
+              stroke="#191817"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 4L28 28"
+              stroke="#191817"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="popup__body-content-box">
+          <div class="popup__body-content-box-title-box">
+            <p class="popup__body-content-box-title tl2">Оставьте заявку</p>
+            <p class="popup__body-content-box-desc txt20">Поможем подобрать психолога!</p>
+          </div>
+          <form data-popup-message="#popup__success" data-dev action="" class="popup__form">
+            <div class="popup__form-input-wrapper">
+              <div class="popup__form-input-box txt18">
+                <label class="popup__label input-group">
+                  <span class="form__input-wrapper">
+                    <input
+                      data-validate
+                      data-required="tel"
+                      class="popup__form-input phone-mask _input-black"
+                      type="text"
+                      autocomplete="off"
+                      name="form[]"
+                      placeholder="+7 (___) ___-__-__"
+                    />
+                  </span>
+                  <span class="error-span">Введите номер телефона</span>
+                </label>
+                <label class="popup__label input-group">
+                  <span class="form__input-wrapper">
+                    <input
+                      class="input--name popup__form-input _input-black"
+                      type="text"
+                      data-validate
+                      data-required="name"
+                      autocomplete="off"
+                      name="form[]"
+                      placeholder="Имя"
+                    />
+                  </span>
+                  <span class="error-span">Поле заполнено неверно</span>
+                </label>
+              </div>
+              <div class="popup__btn-box">
+                <p class="popup__agreement-text txt16">
+                  Нажимая на кнопку “Отправить”, Вы соглашаетесь на
+                  <a href="#">обработку персональных данных</a> и <a href="#">политику конфиденциальности</a>
+                </p>
+                <button class="popup__btn button-shadow button-shadow--green">
+                  <span class="button-shadow-text txt16 txt16_caps">Отправить</span>
+                  <span class="button-shadow-svg-box">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup__help" aria-hidden="true" class="popup popup--help">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body">
+        <button data-close type="button" class="popup__body-close-btn">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M28 4L4 28"
+              stroke="#191817"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 4L28 28"
+              stroke="#191817"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="popup__body-content-box">
+          <div class="popup__body-content-img-box">
+            <img src="./assets/images/popup-help.webp" class="desktop" alt="">
+            <img src="./assets/images/popup-help-mob.webp" class="mobile" alt="">
+          </div>
+          <div class="popup__body-info-box">
+            <div class="popup__body-content-box-title-box">
+              <p class="popup__body-content-box-title tl2">Срочная помощь</p>
+              <p class="popup__body-content-box-desc txt20">
+                Если Вам нужна срочная помощь психолога, позвоните нам по номеру
+                <a href="tel:+70000000000">+7 (000) 000 00-00</a> или оставьте заявку.
+              </p>
+            </div>
+            <form data-popup-message="#popup__success" data-dev action="" class="popup__form">
+              <div class="popup__form-input-wrapper">
+                <div class="popup__form-input-box txt18">
+                  <label class="popup__label input-group">
+                    <span class="form__input-wrapper">
+                      <input
+                        data-validate
+                        data-required="tel"
+                        class="popup__form-input phone-mask _input-black"
+                        type="text"
+                        autocomplete="off"
+                        name="form[]"
+                        placeholder="+7 (___) ___-__-__"
+                      />
+                    </span>
+                    <span class="error-span">Введите номер телефона</span>
+                  </label>
+                  <label class="popup__label input-group">
+                    <span class="form__input-wrapper">
+                      <input
+                        class="input--name popup__form-input _input-black"
+                        type="text"
+                        data-validate
+                        data-required="name"
+                        autocomplete="off"
+                        name="form[]"
+                        placeholder="Имя"
+                      />
+                    </span>
+                    <span class="error-span">Поле заполнено неверно</span>
+                  </label>
+                </div>
+                <div class="popup__btn-box">
+                  <p class="popup__agreement-text txt16">
+                    Нажимая на кнопку “Отправить”, Вы соглашаетесь на
+                    <a href="#">обработку персональных данных</a> и
+                    <a href="#">политику конфиденциальности</a>
+                  </p>
+                  <button class="popup__btn button-shadow button-shadow--green">
+                    <span class="button-shadow-text txt16 txt16_caps">Отправить</span>
+                    <span class="button-shadow-svg-box">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
