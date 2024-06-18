@@ -7,6 +7,7 @@
     <title>Mental Health</title>
   </head>
   <body>
+    <include src="./components/_popup.html"></include>
     <div class="root">
       <h1>Mental Health</h1>
       <h2>готовые страницы:</h2>
@@ -39,10 +40,23 @@
           <a href="./test.html">Тест</a>
         </li>
       </ol>
-
-      <ol><li>
-        <a href="./ui.html">ui</a>
-      </li></ol>
+      <h2>модалки:</h2>
+      <ol>
+        <li>
+          <button data-popup="#popup__feedback">оставьте заявку</button>
+        </li>
+        <li>
+          <button data-popup="#popup__success">Ваша заявка отправлена</button>
+        </li>
+        <li>
+          <button data-popup="#popup__help">срочная помощь</button>
+        </li>
+      </ol>
+      <ol>
+        <li>
+          <a href="./ui.html">ui</a>
+        </li>
+      </ol>
     </div>
     <style>
       @charset "UTF-8";

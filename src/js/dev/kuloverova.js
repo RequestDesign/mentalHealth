@@ -21,13 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
     form();
   } catch {}
   try {
-    mainBannerAnim();
+    programsSwiper();
   } catch {}
   try {
     wowAnim();
   } catch {}
   try {
     footerDropdown();
+  } catch {}
+  try {
+    confidenceSwiper();
+  } catch {}
+  try {
+    mainBannerAnim();
+  } catch {}
+  try {
+    identifyProblemAnimBg();
   } catch {}
   try {
     if (window.innerWidth > 768) {
@@ -122,7 +131,7 @@ function wowAnim() {
   const wow = new WOW({
     boxClass: 'wow',
     animateClass: 'animate__animated',
-    offset: 200,
+    offset: 150,
     mobile: true,
     live: true
   });
@@ -361,6 +370,70 @@ function footerDropdown() {
   });
 }
 
+function identifyProblemAnimBg() {
+  const section = document.querySelector('.identify-problem');
+  const bg = document.querySelector('.identify-problem__content-bg');
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'middle 500px',
+      end: 'bottom bottom'
+    }
+  });
+  tl.from(bg, {
+    duration: 1.3,
+    ease: 'power2.inOut',
+    rotate: '-45deg'
+  });
+}
+
+function programsSwiper() {
+  const swiper = new Swiper('.programs__swiper', {
+    slidesPerView: 1.1,
+    spaceBetween: rem(2),
+    grid: {
+      rows: 1
+    },
+    speed: 1000,
+    breakpoints: {
+      769: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        // spaceBetween: 0,
+        spaceBetween: rem(3.2),
+        grid: {
+          rows: 3,
+          fill: 'column'
+        }
+      }
+    }
+  });
+}
+
+function confidenceSwiper() {
+  const swiperRibbon = new Swiper('.confidence__swiper', {
+    speed: 3000,
+    slidesPerView: 'auto',
+    loop: true,
+    allowTouchMove: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: true // отключаем возможность отлючить анимацию при касании
+    },
+    breakpoints: {
+      769: {
+        speed: 4000,
+        slidesPerView: 'auto',
+        loop: true,
+        allowTouchMove: false,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false // отключаем возможность отлючить анимацию при касании
+        }
+      }
+    }
+  });
+}
 
 //открытие модалки скрочной помощи для страницы каталога с психологами
 // function openModalHelp() {
