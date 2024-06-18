@@ -1,0 +1,239 @@
+.programs {
+  // .programs__inner
+  & .container {
+    @include small-tablet {
+      overflow: hidden;
+    }
+  }
+  &__inner {
+    display: flex;
+    gap: 3.2rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // .programs__photo-wrapper
+
+  &__photo-wrapper {
+    padding: 6.4rem;
+    border-radius: 4rem;
+    overflow: hidden;
+    background-color: $white;
+    width: 78.4rem;
+    min-height: 78.4rem;
+    flex-shrink: 0;
+    position: relative;
+    @include small-tablet {
+      width: 100%;
+      height: 90.4rem;
+      padding: 4.8rem;
+    }
+  }
+
+  // .programs__photo-content-box
+
+  &__photo-content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+
+  // .programs__photo-title
+
+  &__photo-title {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+  }
+
+  // .programs__btn
+
+  &__btn {
+    position: relative;
+    z-index: 5;
+    width: fit-content;
+  }
+
+  // .programs__photo-box
+
+  &__photo-box {
+    position: absolute;
+    width: 62.2rem;
+    height: 76.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15rem;
+    z-index: 4;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .programs__bg-box
+
+  &__bg-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 103.6rem;
+    height: 42rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // .programs__swiper-box
+
+  &__swiper-box {
+  }
+
+  // .programs__swiper
+
+  &__swiper {
+    width: 78.4rem;
+    height: 78.4rem;
+    @include small-tablet {
+      width: 100%;
+      height: 37.2rem;
+      overflow: visible!important;
+    }
+  }
+
+  // .programs__swiper-wrapper
+
+  &__swiper-wrapper {
+    // flex-direction: row !important;
+    // gap: 3.2rem;
+  
+  }
+
+  // .programs__swiper-slide
+
+  &__swiper-slide {
+    // width: 37.6rem!important;;
+    // height: 24rem!important;;
+    border-radius: 4rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    &:nth-child(4n + 1) {
+      background-color: $blue;
+    }
+    &:nth-child(4n + 2) {
+      background-color: $green;
+    }
+    &:nth-child(4n + 3) {
+      background-color: $blue;
+    }
+    &:nth-child(4n + 4) {
+      background-color: $green;
+    }
+
+    // &--blue {
+    //   background-color: $blue;
+    // }
+    // &--green {
+    //   background-color: $green;
+    // }
+  }
+
+  // .programs__slide-inner
+
+  &__slide-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.2rem 2.3rem 3.2rem 3.2rem;
+    color: $white;
+    height: 100%;   gap: 2.7rem;
+    @include small-tablet {
+      padding: 3.2rem;
+      gap: 9rem;
+    }
+  }
+
+  // .programs__slide-title
+
+  &__slide-title {
+    letter-spacing: -0.02em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  // .programs__slide-btn-box
+
+  &__slide-btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  // .programs__slide-btn
+
+  &__slide-btn {
+  }
+
+  // .programs__slide-svg-wrapper
+
+  &__slide-svg-wrapper {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    border: 0.2rem solid $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  // .programs__slide-svg-box
+
+  &__slide-svg-box {
+    width: 1rem;
+    height: 1rem;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  // .programs__slide-bg
+
+  &__slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15.2rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      height: 27rem;
+    }
+  }
+}

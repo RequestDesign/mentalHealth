@@ -1,0 +1,128 @@
+.identify-problem {
+  // .identify-problem__container
+
+  &__container {
+    max-width: 192rem;
+    width: 100%;
+    @include small-tablet {
+      padding: 0;
+    }
+  }
+
+  // .identify-problem__inner
+
+  &__inner {
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // .identify-problem__title-box
+
+  &__title-box {
+    @include small-tablet {
+      padding: 4.8rem 5.2rem;
+      border-radius: 4rem 4rem 0 0;
+      background-color: $white;
+      color: $blue;
+    }
+  }
+
+  // .identify-problem__title
+
+  &__title {
+  }
+
+  // .identify-problem__content-box
+
+  &__content-box {
+    padding: 6.4rem 14.5rem 11.5rem;
+    border-radius: 8rem;
+    background-color: $blue;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    gap: 23rem;
+    position: relative;
+    overflow: hidden;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 3.2rem;
+      padding: 4.8rem 5.2rem;
+      border-radius: 0 0 4rem 4rem;
+    }
+  }
+
+  // .identify-problem__content-title-box
+
+  &__content-title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  // .identify-problem__content-btn-box
+
+  &__content-btn-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    position: relative;
+    z-index: 5;
+    @include small-tablet {
+      gap: 9.6rem;
+    }
+  }
+
+  // .identify-problem__content-text
+
+  &__content-text {
+  }
+
+  // .identify-problem__content-desc
+
+  &__content-desc {
+    width: 30rem;
+    text-align: right;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 5;
+    @include small-tablet {
+      width: 32rem;
+      font-size: 2.4rem;
+      text-align: left;
+    }
+  }
+
+  // .identify-problem__content-btn
+
+  &__content-btn {
+    width: fit-content;
+  }
+
+  // .identify-problem__content-bg
+
+  &__content-bg {
+    position: absolute;
+    width: 77.2rem;
+    height: 64.0rem;
+    top: -5.6rem;
+    right: 17rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+        width: 74.6rem;
+        height: 63.4rem;
+        left: 0.2rem;
+        // // transform: translateX(-50%);
+        bottom: -55%;
+        top: auto;
+      }
+  }
+}
