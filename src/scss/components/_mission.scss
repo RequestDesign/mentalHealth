@@ -1,0 +1,117 @@
+.mission {
+  margin-bottom: 20rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    width: 64.9rem;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    width: 78.3rem;
+  }
+
+  &__title {
+    margin-bottom: 2.4rem;
+  }
+
+  &__text {
+    margin-bottom: 2.4rem;
+  }
+
+  &__comment {
+    &-head {
+      display: flex;
+      column-gap: 2.4rem;
+      align-items: center;
+      margin-bottom: 1.6rem;
+    }
+
+    &-avatar {
+      width: 9.2rem;
+      height: 9.2rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-name {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 3rem;
+
+    &.active {
+      svg {
+        path {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+
+    svg {
+      path {
+        stroke-dashoffset: 798;
+        stroke-dasharray: 798;
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+
+  @media (max-width: 48em) {
+    margin-bottom: 18rem;
+
+    &__container {
+      flex-direction: column;
+      row-gap: 8rem;
+    }
+
+    &__left,
+    &__right {
+      width: 100%;
+    }
+
+    &__right {
+      row-gap: 4.8rem;
+    }
+
+    &__title {
+      margin-bottom: 4rem;
+    }
+
+    &__text {
+      margin-bottom: 4rem;
+    }
+
+    &__comment {
+      &-head {
+        column-gap: 3.2rem;
+        margin-bottom: 3.2rem;
+      }
+
+      &-avatar {
+        width: 16.8rem;
+        height: 16.8rem;
+      }
+
+      &-name {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+}
