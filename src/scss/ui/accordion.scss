@@ -1,0 +1,133 @@
+.accordion {
+  width: 100%;
+
+  &__item {
+    &.active {
+      .accordion__item-switch {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+
+      .accordion__item-head {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 4rem;
+      border-bottom: 3px solid $gray;
+      margin-bottom: 4rem;
+    }
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 2.4rem;
+      align-items: center;
+      transition: margin 0.5s ease-in-out;
+    }
+
+    &-title {
+      max-width: 92%;
+    }
+
+    &-switch {
+      position: relative;
+      cursor: pointer;
+      width: 4.4rem;
+      height: 4.4rem;
+      border-radius: 50%;
+      background-color: $blue;
+      box-shadow: 2px 4px 0px 0px #1d1e1f;
+      transition: box-shadow 0.5s ease-in-out;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 1.4rem;
+        height: 0.2rem;
+        border-radius: 0.2rem;
+        background-color: $white;
+      }
+
+      &::after {
+        transform: rotateZ(-90deg);
+        transition: transform 0.5s ease-in-out;
+      }
+
+      & > * {
+        pointer-events: none;
+      }
+    }
+
+    &-body {
+      background-color: $blue;
+      border-radius: 4rem;
+      padding: 4rem;
+      color: $white;
+
+      &--wrapper {
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 48em) {
+    &__item {
+      &.active {
+        .accordion__item-head {
+          margin-bottom: 4.8rem;
+        }
+      }
+
+      &:not(:last-child) {
+        padding-bottom: 4.8rem;
+        margin-bottom: 4.8rem;
+      }
+
+      &-head {
+        column-gap: 4.8rem;
+        align-items: flex-start;
+      }
+
+      &-title {
+        max-width: 81%;
+      }
+
+      &-switch {
+        width: 7.6rem;
+        height: 7.6rem;
+
+        &::before,
+        &::after {
+          width: 2rem;
+        }
+      }
+
+      &-body {
+        padding: 3.2rem;
+
+        p {
+          &:not(:last-child) {
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
