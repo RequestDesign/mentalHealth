@@ -1,0 +1,270 @@
+.work-with {
+  &__container {
+    max-width: 192rem;
+    width: 100%;
+    overflow: hidden;
+    @include small-tablet {
+      padding: 0;
+    }
+  }
+  // .work-with__inner
+
+  &__inner {
+    padding: 6.4rem 15rem;
+    border-radius: 8rem;
+    display: flex;
+    background-color: $white;
+    @include small-tablet {
+      padding: 0;
+      border-radius: 0;
+      flex-direction: column;
+      gap: 4rem;
+      background-color: transparent;
+    }
+  }
+
+  // .work-with__content-box
+
+  &__content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: 86.6rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+      padding: 4.8rem 5.2rem;
+      border-radius: 4rem;
+      background-color: $white;
+      gap: 12rem;
+    }
+  }
+
+  // .work-with__title-box
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .work-with__title
+
+  &__title {
+  }
+
+  // .work-with__desc-box
+
+  &__desc-box {
+    width: 72.9rem;
+    @include small-tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // .work-with__desc
+
+  &__desc {
+  }
+
+  // .work-with__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    width: 54.2rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 9.6rem;
+    }
+  }
+
+  // .work-with__item
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 4.8rem;
+    }
+  }
+
+  // .work-with__item-svg-box
+
+  &__item-svg-box {
+    width: 3.2rem;
+    height: 3.2rem;
+    flex-shrink: 0;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 6.4rem;
+      height: 6.4rem;
+    }
+  }
+
+  // .work-with__item-content-box
+
+  &__item-content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    @include small-tablet {
+      gap: 1.6rem;
+    }
+  }
+
+  // .work-with__item-title
+
+  &__item-title {
+  }
+
+  // .work-with__item-desc
+
+  &__item-desc {
+  }
+
+  // .work-with__photo-box
+
+  &__photo-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    width: 81.2rem;
+    flex-shrink: 0;
+    margin-left: -7.5rem;
+
+    @include small-tablet {
+      width: 100%;
+      background-color: $white;
+      border-radius: 4rem;
+      margin-left: 0;
+      padding: 4.8rem 3rem;
+      overflow: hidden;
+    }
+  }
+
+  // .work-with__photo-list-box
+
+  &__photo-list-box {
+  }
+
+  // .work-with__photo-bg
+
+  &__photo-bg {
+    width: 81.2rem;
+    height: 52.8rem;
+    position: absolute;
+    bottom: -6.4rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include small-tablet {
+        height: auto;
+      }
+    }
+    @include small-tablet {
+      width: 158rem;
+      height: 60rem;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+  }
+
+  // .work-with__photo-img-box
+
+  &__photo-img-box {
+    position: absolute;
+    bottom: -6.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 44.1rem;
+    height: 69.5rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 50rem;
+      height: 76.6rem;
+      bottom: 0;
+    }
+  }
+
+  // .work-with__photo-list
+
+  &__photo-list {
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      min-height: 84rem;
+      gap: 3.2rem;
+    }
+  }
+
+  // .work-with__photo-item
+
+  &__photo-item {
+    padding: 2rem 3.2rem;
+    background-color: $white;
+    color: $green;
+    border: 0.2rem solid $green;
+    border-radius: 10rem;
+    position: absolute;
+    z-index: 5;
+    white-space: nowrap;
+    &:nth-child(1) {
+      top: 29.6rem;
+      left: 0;
+    }
+    &:nth-child(2) {
+      top: 40rem;
+      left: 34.7rem;
+    }
+    &:nth-child(3) {
+      top: auto;
+      bottom: 0;
+      left: 13.6rem;
+    }
+    @include small-tablet {
+      position: static;
+      width: fit-content;
+      font-size: 2.8rem;
+    }
+  }
+
+  &__btn {
+    &.desktop {
+      display: flex;
+      align-self: flex-end;
+      @include small-tablet {
+        display: none;
+      }
+    }
+    &.mobile {
+      display: none;
+      @include small-tablet {
+        display: flex;
+        width: fit-content;
+      }
+    }
+  }
+}
