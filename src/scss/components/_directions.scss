@@ -86,7 +86,7 @@
     }
     & .directions__content-title {
       &::after {
-        background: url(./assets/images/line-title-psychotherapy.svg) no-repeat top/cover;
+        // background: url(./assets/images/line-title-psychotherapy.svg) no-repeat top/cover;
       }
     }
     &::after {
@@ -135,7 +135,7 @@
     }
     & .directions__content-title {
       &::after {
-        background: url(./assets/images/line-title-psychology.svg) no-repeat top/cover;
+        // background: url(./assets/images/line-title-psychology.svg) no-repeat top/cover;
       }
     }
 
@@ -182,9 +182,9 @@
       }
     }
     & .directions__content-title {
-      &::after {
-        background: url(./assets/images/line-title-coaching.svg) no-repeat top/cover;
-      }
+      // &::after {
+      //   background: url(./assets/images/line-title-coaching.svg) no-repeat top/cover;
+      // }
     }
 
     &::after {
@@ -248,19 +248,37 @@
     position: relative;
     width: fit-content;
     max-width: 25rem;
-    &::after {
+    // &::after {
+    //   position: absolute;
+    //   content: '';
+    //   bottom: -0.5rem;
+    //   left: -0.5rem;
+    //   right: -0.5rem;
+    //   height: 1rem;
+    //   @include small-tablet {
+    //     height: 2rem;
+    //     bottom: -1rem;
+    //     left: -1rem;
+    //     right: -1rem;
+    //   }
+    // }
+
+    & .directions__content-line {
       position: absolute;
-      content: '';
       bottom: -0.5rem;
       left: -0.5rem;
       right: -0.5rem;
       height: 1rem;
+      & img {
+        width: 100%;
+      }
       @include small-tablet {
         height: 2rem;
         bottom: -1rem;
         left: -1rem;
         right: -1rem;
       }
+
     }
     @include small-tablet {
       max-width: 50rem;

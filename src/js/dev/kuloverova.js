@@ -50,6 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
     expertsSwiper();
   } catch {}
   try {
+    openModalHelp();
+  } catch {}
+  try {
+    testPage();
+  } catch {}
+  try {
+    servicesTabsSwiper();
+  } catch {}
+  try {
     if (window.innerWidth > 768) {
       helpWithAnim();
     } else {
@@ -446,9 +455,44 @@ function confidenceSwiper() {
   });
 }
 
+// функция определения максимального. минимального и текущего обозначения ренджа возраста
+function minMaxRange(item) {
+  let currentArr;
+  let currentStart;
+  let currentMinStart;
+  let currentMinArr;
+  let currentMaxStart;
+  let currentMaxArr;
+
+  if (item.dataset.current) {
+    currentArr = item.dataset.current.split(',');
+    currentStart = [+currentArr[0], +currentArr[1]];
+  } else {
+    currentStart = [25, 65];
+  }
+  if (item.dataset.min) {
+    currentMinArr = item.dataset.min;
+    currentMinStart = [+currentMinArr];
+    console.log(currentMinArr);
+  } else {
+    currentMinStart = [25];
+  }
+  if (item.dataset.max) {
+    currentMaxArr = item.dataset.max;
+    currentMaxStart = [+currentMaxArr];
+    console.log(currentMaxArr);
+  } else {
+    currentMinStart = [65];
+  }
+
+  return {
+    currentStart,
+    currentMinStart,
+    currentMaxStart
+  };
+}
+
 function catalogPsyhologist() {
-
-
   // ===========================================================
   // ===========================================================
   //                             TABS
@@ -690,8 +734,6 @@ function catalogPsyhologist() {
               $(this).remove();
             }
           });
-
-
       }
     });
 
@@ -716,78 +758,71 @@ function catalogPsyhologist() {
 
     if ($(this).parent().hasClass('catalog__modal-item--town')) {
       $(this).parent().remove();
-      let selectorTopText= $('[data-dropdown="town"]').find('.important__dropdown-selector-top-text')
- 
+      let selectorTopText = $('[data-dropdown="town"]').find('.important__dropdown-selector-top-input');
+
       $('.catalog__modal-item--town').remove();
 
-      const checkboxes = $('[data-dropdown="town"]').find('.dropdown-checkbox')
+      const checkboxes = $('[data-dropdown="town"]').find('.dropdown-checkbox');
       $(checkboxes).each(function () {
-          $(this).prop('checked', false);
-      })
+        $(this).prop('checked', false);
+      });
 
-      selectorTopText.removeClass('isActive')
+      selectorTopText.removeClass('isActive');
       showMoreItem(containerAllFilters, 6);
       showMoreItem(containerImportant, 4);
-      selectorTopText.text('Город')
-
-   
+      selectorTopText.val('');
     }
 
     if ($(this).parent().hasClass('catalog__modal-item--metro')) {
       $(this).parent().remove();
-      let selectorTopText= $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-text')
- 
+      let selectorTopText = $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-input');
+
       $('.catalog__modal-item--metro').remove();
 
-      const checkboxes = $('[data-dropdown="metro"]').find('.dropdown-checkbox')
+      const checkboxes = $('[data-dropdown="metro"]').find('.dropdown-checkbox');
       $(checkboxes).each(function () {
-          $(this).prop('checked', false);
-      })
+        $(this).prop('checked', false);
+      });
 
-      selectorTopText.removeClass('isActive')
+      selectorTopText.removeClass('isActive');
       showMoreItem(containerAllFilters, 6);
       showMoreItem(containerImportant, 4);
-      selectorTopText.text('Метро')
-
-   
+      selectorTopText.val('');
     }
 
     if ($(this).parent().hasClass('catalog__modal-item--education')) {
       $(this).parent().remove();
-      let selectorTopText= $('[data-dropdown="education"]').find('.important__dropdown-selector-top-text')
- 
+      let selectorTopText = $('[data-dropdown="education"]').find('.important__dropdown-selector-top-input');
+
       $('.catalog__modal-item--education').remove();
 
-      const checkboxes = $('[data-dropdown="education"]').find('.dropdown-checkbox')
+      const checkboxes = $('[data-dropdown="education"]').find('.dropdown-checkbox');
       $(checkboxes).each(function () {
-          $(this).prop('checked', false);
-      })
+        $(this).prop('checked', false);
+      });
 
-      selectorTopText.removeClass('isActive')
+      selectorTopText.removeClass('isActive');
       showMoreItem(containerAllFilters, 6);
       showMoreItem(containerImportant, 4);
-      selectorTopText.text('Не важно')
-
-   
+      selectorTopText.val('');
     }
 
     if ($(this).parent().hasClass('catalog__modal-item--methods')) {
       $(this).parent().remove();
-      let selectorTopText= $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-text')
- 
+      let selectorTopText = $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-input');
+
       $('.catalog__modal-item--methods').remove();
 
-      const checkboxes = $('[data-dropdown="methods"]').find('.dropdown-checkbox')
+      const checkboxes = $('[data-dropdown="methods"]').find('.dropdown-checkbox');
       $(checkboxes).each(function () {
-          $(this).prop('checked', false);
-      })
+        $(this).prop('checked', false);
+      });
 
-      selectorTopText.removeClass('isActive')
+      selectorTopText.removeClass('isActive');
       showMoreItem(containerAllFilters, 6);
       showMoreItem(containerImportant, 4);
-      selectorTopText.text('Не важно')
-
-   
+      selectorTopText.val('');
+      console.log(selectorTopText);
     }
 
     showMoreItem(containerCost, 4);
@@ -921,11 +956,11 @@ function catalogPsyhologist() {
 
         const checkboxesDropdown = $('.important__form').find('.dropdown-checkbox');
         checkboxesDropdown.prop('checked', false);
-        $('.important__dropdown-selector-top-text').removeClass('isActive')
-        $('[data-dropdown="town"]').find('.important__dropdown-selector-top-text').text('Город')
-        $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-text').text('Метро')
-        $('[data-dropdown="education"]').find('.important__dropdown-selector-top-text').text('Не важно')
-        $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-text').text('Не важно')
+        $('.important__dropdown-selector-top-text').removeClass('isActive');
+        $('[data-dropdown="town"]').find('.important__dropdown-selector-top-text').text('Город');
+        $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-text').text('Метро');
+        $('[data-dropdown="education"]').find('.important__dropdown-selector-top-text').text('Не важно');
+        $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-text').text('Не важно');
         checkboxesDropdown.each(function () {
           const checkboxValue = $(this).next().text().trim();
           containerAllFilters
@@ -936,8 +971,6 @@ function catalogPsyhologist() {
               }
             });
         });
-
-
       }
 
       showMoreItem(containerCost, 4);
@@ -1041,43 +1074,6 @@ function catalogPsyhologist() {
     $(this).toggleClass('isActive');
   }
 
-  // функция определения максимального. минимального и текущего обозначения ренджа возраста
-  function minMaxRange(item) {
-    let currentArr;
-    let currentStart;
-    let currentMinStart;
-    let currentMinArr;
-    let currentMaxStart;
-    let currentMaxArr;
-
-    if (item.dataset.current) {
-      currentArr = item.dataset.current.split(',');
-      currentStart = [+currentArr[0], +currentArr[1]];
-    } else {
-      currentStart = [25, 65];
-    }
-    if (item.dataset.min) {
-      currentMinArr = item.dataset.min;
-      currentMinStart = [+currentMinArr];
-      console.log(currentMinArr);
-    } else {
-      currentMinStart = [25];
-    }
-    if (item.dataset.max) {
-      currentMaxArr = item.dataset.max;
-      currentMaxStart = [+currentMaxArr];
-      console.log(currentMaxArr);
-    } else {
-      currentMinStart = [65];
-    }
-
-    return {
-      currentStart,
-      currentMinStart,
-      currentMaxStart
-    };
-  }
-
   // клик по дропдаунам, открытие выпадаек с чекбоксами как в модалке с чем нужна помощь
   function clickDropdownHelp() {
     $('.important__dropdown-selector-top')
@@ -1104,24 +1100,29 @@ function catalogPsyhologist() {
     }
   }
 
-    // функция клика по выпадашкам в модалке с чем нужна помощь
+  // функция клика по выпадашкам в модалке с чем нужна помощь
   function checkCheckboxDropdown() {
-      const dataDropdown = $(this).closest('.important__dropdown-selector').data('dropdown')
-      const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find('.dropdown-checkbox')
-      const val = $(this).next().text().trim();
+    const dataDropdown = $(this).closest('.important__dropdown-selector').data('dropdown');
+    const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find('.dropdown-checkbox');
+    const val = $(this).next().text().trim();
 
-      let group = $(this).data('checkbox');
-      let isChecked = $(this).is(':checked');
-      let selectorTopText = $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector ').find('.important__dropdown-selector-top-text')
-      let selectorTop= $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector').find('.important__dropdown-selector-top')
-      let selectorBottom = $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector').find('.important__dropdown-selector-bottom')
+    let group = $(this).data('checkbox');
+    let isChecked = $(this).is(':checked');
+    let selectorTopText = $('[data-checkbox="' + group + '"]')
+      .closest('.important__dropdown-selector ')
+      .find('.important__dropdown-selector-top-input');
+    let selectorTop = $('[data-checkbox="' + group + '"]')
+      .closest('.important__dropdown-selector')
+      .find('.important__dropdown-selector-top');
+    let selectorBottom = $('[data-checkbox="' + group + '"]')
+      .closest('.important__dropdown-selector')
+      .find('.important__dropdown-selector-bottom');
 
-      const allInputs = containerAllFilters.find(`.catalog__modal-item--${dataDropdown}`);
-      const importantInputs = containerImportant.find(`.catalog__modal-item--${dataDropdown}`);
+    const allInputs = containerAllFilters.find(`.catalog__modal-item--${dataDropdown}`);
+    const importantInputs = containerImportant.find(`.catalog__modal-item--${dataDropdown}`);
 
-
-      const newElem = $(
-        `<div class="catalog__modal-item">
+    const newElem = $(
+      `<div class="catalog__modal-item">
         <p class="catalog__modal-item-text txt16">${val}</p>
         <div class="catalog__modal-item-remove-btn-box">
           <div class="catalog__modal-item-remove-svg-box">
@@ -1143,58 +1144,51 @@ function catalogPsyhologist() {
         </div>
       </div> 
       `
-      );
+    );
 
-      $(checkboxes).each(function () {
-          $(this).prop('checked', false);
-      })
+    $(checkboxes).each(function () {
+      $(this).prop('checked', false);
+    });
 
-      if(isChecked) {
-        $('[data-checkbox="' + group + '"]').prop('checked', isChecked);
-        selectorTopText.text(`${val}`)
-        selectorTopText.addClass('isActive')
-        newElem.addClass(`catalog__modal-item--${dataDropdown}`)
+    if (isChecked) {
+      $('[data-checkbox="' + group + '"]').prop('checked', isChecked);
+      selectorTopText.val(`${val}`);
+      selectorTopText.addClass('isActive');
+      newElem.addClass(`catalog__modal-item--${dataDropdown}`);
 
-        if (allInputs.length) {
-          if (allInputs.text().trim() !== val.trim()) {
-            allInputs.remove();
-            containerAllFilters.prepend(newElem.clone());
-            showMoreItem(containerAllFilters, 6);
-          }
-        } else {
+      if (allInputs.length) {
+        if (allInputs.val().trim() !== val.trim()) {
+          allInputs.remove();
           containerAllFilters.prepend(newElem.clone());
           showMoreItem(containerAllFilters, 6);
         }
-        if (importantInputs.length) {
-          if (importantInputs.text().trim() !== val.trim()) {
-            importantInputs.remove();
-            containerImportant.prepend(newElem);
-            showMoreItem(containerImportant, 4);
-          }
-        } else {
-          containerImportant.prepend(newElem.clone());
+      } else {
+        containerAllFilters.prepend(newElem.clone());
+        showMoreItem(containerAllFilters, 6);
+      }
+      if (importantInputs.length) {
+        if (importantInputs.text().trim() !== val.trim()) {
+          importantInputs.remove();
+          containerImportant.prepend(newElem);
           showMoreItem(containerImportant, 4);
         }
-        containerImportant.css('display', 'flex');
-        containerImportant.find('.catalog__modal-clear').addClass('isVisible');
       } else {
-        selectorTopText.removeClass('isActive')
-        allInputs.remove()
-        importantInputs.remove()
-        showMoreItem(containerAllFilters, 6);
+        containerImportant.prepend(newElem.clone());
         showMoreItem(containerImportant, 4);
-        if(dataDropdown == 'town') {
-          selectorTopText.text('Город')
-        } else if (dataDropdown == 'metro') {
-          selectorTopText.text('Метро')
-        } else {
-          selectorTopText.text('Не важно')
-        }
       }
+      containerImportant.css('display', 'flex');
+      containerImportant.find('.catalog__modal-clear').addClass('isVisible');
+    } else {
+      selectorTopText.removeClass('isActive');
+      allInputs.remove();
+      importantInputs.remove();
+      showMoreItem(containerAllFilters, 6);
+      showMoreItem(containerImportant, 4);
+      selectorTopText.val('');
+    }
 
-      selectorTop.removeClass('isActive')
-      selectorBottom.slideUp()
-
+    selectorTop.removeClass('isActive');
+    selectorBottom.slideUp();
   }
 
   // рендж возраста
@@ -1411,26 +1405,29 @@ function catalogPsyhologist() {
       }
     });
 
-      //вывод чекбоксов в выпадашках при прогрузке страницы из модалки что важно в психологе
+  //вывод чекбоксов в выпадашках при прогрузке страницы из модалки что важно в психологе
   $('.catalog')
-  .find('.dropdown-checkbox')
-  .each(function () {
+    .find('.dropdown-checkbox')
+    .each(function () {
+      const dataDropdown = $(this).closest('.important__dropdown-selector').data('dropdown');
+      const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find('.dropdown-checkbox');
 
-    const dataDropdown = $(this).closest('.important__dropdown-selector').data('dropdown');
-    const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find('.dropdown-checkbox')
+      let group = $(this).data('checkbox');
+      let isChecked = $(this).is(':checked');
+      let selectorTopText = $('[data-checkbox="' + group + '"]')
+        .closest('.important__dropdown-selector')
+        .find('.important__dropdown-selector-top-input');
+      let selectorTop = $('[data-checkbox="' + group + '"]')
+        .closest('.important__dropdown-selector')
+        .find('.important__dropdown-selector-top');
+      let selectorBottom = $('[data-checkbox="' + group + '"]')
+        .closest('.important__dropdown-selector')
+        .find('.important__dropdown-selector-bottom');
 
+      const val = $(this).next().text().trim();
 
-    let group = $(this).data('checkbox');
-    let isChecked = $(this).is(':checked');
-    let selectorTopText = $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector').find('.important__dropdown-selector-top-text')
-    let selectorTop= $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector').find('.important__dropdown-selector-top')
-    let selectorBottom = $('[data-checkbox="' + group + '"]').closest('.important__dropdown-selector').find('.important__dropdown-selector-bottom')
-
-    const val = $(this).next().text().trim();
-
-
-    const newElem = $(
-      `<div class="catalog__modal-item">
+      const newElem = $(
+        `<div class="catalog__modal-item">
     <p class="catalog__modal-item-text txt16">${val}</p>
     <div class="catalog__modal-item-remove-btn-box">
       <div class="catalog__modal-item-remove-svg-box">
@@ -1452,25 +1449,23 @@ function catalogPsyhologist() {
     </div>
   </div> 
   `
-    );
+      );
 
-    console.log(selectorTopText)
+      if (isChecked) {
+        selectorTopText.val(`${val}`);
+        selectorTopText.addClass('isActive');
+        newElem.addClass(`catalog__modal-item--${dataDropdown}`);
 
-    if (isChecked) {
-      selectorTopText.text(`${val}`);
-      selectorTopText.addClass('isActive');
-      newElem.addClass(`catalog__modal-item--${dataDropdown}`);
+        containerAllFilters.prepend(newElem.clone());
+        showMoreItem(containerAllFilters, 6);
 
-      containerAllFilters.prepend(newElem.clone());
-      showMoreItem(containerAllFilters, 6);
+        containerImportant.prepend(newElem);
+        showMoreItem(containerImportant, 4);
 
-      containerImportant.prepend(newElem);
-      showMoreItem(containerImportant, 4);
-
-      containerImportant.css('display', 'flex');
-      containerImportant.find('.catalog__modal-clear').addClass('isVisible');
-    }
-  });
+        containerImportant.css('display', 'flex');
+        containerImportant.find('.catalog__modal-clear').addClass('isVisible');
+      }
+    });
 
   // клик по кнопке "сброс"
   $('.catalog__filter-clear').on('click', function () {
@@ -1497,11 +1492,11 @@ function catalogPsyhologist() {
 
     const checkboxesDropdown = $('.important__form').find('.dropdown-checkbox');
     checkboxesDropdown.prop('checked', false);
-    $('.important__dropdown-selector-top-text').removeClass('isActive')
-    $('[data-dropdown="town"]').find('.important__dropdown-selector-top-text').text('Город')
-    $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-text').text('Метро')
-    $('[data-dropdown="education"]').find('.important__dropdown-selector-top-text').text('Не важно')
-    $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-text').text('Не важно')
+    $('.important__dropdown-selector-top-text').removeClass('isActive');
+    $('[data-dropdown="town"]').find('.important__dropdown-selector-top-text').text('Город');
+    $('[data-dropdown="metro"]').find('.important__dropdown-selector-top-text').text('Метро');
+    $('[data-dropdown="education"]').find('.important__dropdown-selector-top-text').text('Не важно');
+    $('[data-dropdown="methods"]').find('.important__dropdown-selector-top-text').text('Не важно');
 
     showMoreItem(containerCost, 4);
     showMoreItem(containerHelp, 4);
@@ -1530,6 +1525,42 @@ function catalogPsyhologist() {
 
   $('.popup').on('click', '.important__dropdown-selector-top', clickDropdownHelp);
   $('.catalog').on('click', '.important__dropdown-selector-top', clickDropdownHelp);
+
+  $('.popup').on('keyup', '.important__dropdown-selector-top-input', function () {
+    var value = $(this).val().toLowerCase();
+    // Фильтрация элементов выпадающего списка по введенному значению
+    $(this)
+      .closest('.important__dropdown-selector')
+      .find('.important__dropdown-selector-item-label')
+      .filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+  });
+  $('.catalog').on('keyup', '.important__dropdown-selector-top-input', function () {
+    var value = $(this).val().toLowerCase();
+    // Фильтрация элементов выпадающего списка по введенному значению
+    $(this)
+      .closest('.important__dropdown-selector')
+      .find('.important__dropdown-selector-item-label')
+      .filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+  });
+
+  $('.popup').on('input', '.important__dropdown-selector-top-input', function () {
+    if ($(this).val() == '') {
+      const checkboxes = $(this).closest('.important__dropdown-selector').find('.dropdown-checkbox');
+      checkboxes.prop('checked', false);
+      $(this).removeClass('isActive');
+    }
+  });
+  $('.catalog').on('input', '.important__dropdown-selector-top-input', function () {
+    if ($(this).val() == '') {
+      const checkboxes = $(this).closest('.important__dropdown-selector').find('.dropdown-checkbox');
+      checkboxes.prop('checked', false);
+      $(this).removeClass('isActive');
+    }
+  });
 
   $('.popup').on('click', '.dropdown-checkbox', checkCheckboxDropdown);
   $('.catalog').on('click', '.dropdown-checkbox', checkCheckboxDropdown);
@@ -1636,11 +1667,202 @@ function expertsSwiper() {
       nextEl: '.experts__swiper-right-btn'
     }
   });
-} 
+}
 
-//открытие модалки скрочной помощи для страницы каталога с психологами
-// function openModalHelp() {
-//   if (document.querySelector('.main')) {
-//     modules.popup.open('#popup__help');
-//   }
-// }
+function openModalHelp() {
+  if (document.querySelector('.catalog-psychologists')) {
+    setTimeout(() => {
+      modules.popup.open('#popup__help');
+    }, 1500);
+  }
+}
+
+function servicesTabsSwiper() {
+  const servicesTabsSwiper = new Swiper('.services__tabs-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 8
+  });
+}
+
+function testPage() {
+  function clickTabsBtn(selector) {
+    $('.test').on('click', selector, function () {
+      $(selector).removeClass('isActive');
+      $(this).addClass('isActive');
+    });
+  }
+
+  clickTabsBtn('.fieldset-important__gender');
+  clickTabsBtn('.fieldset-important__type');
+
+  const handlesSlider = document.querySelector('.fieldset-important__age-range');
+  const btnsUnImpoerantAge = document.querySelector('.fieldset-important__age-btn');
+
+  noUiSlider.create(handlesSlider, {
+    start: minMaxRange(handlesSlider).currentStart,
+    step: 1,
+    connect: true,
+    range: {
+      min: minMaxRange(handlesSlider).currentMinStart,
+      max: minMaxRange(handlesSlider).currentMaxStart
+    },
+    tooltips: true,
+    format: wNumb({
+      decimals: 0
+    })
+  });
+
+  btnsUnImpoerantAge.addEventListener('click', function () {
+    handlesSlider.noUiSlider.set([
+      ...minMaxRange(handlesSlider).currentMinStart,
+      ...minMaxRange(handlesSlider).currentMaxStart
+    ]);
+  });
+
+  function clickDropdownHelp() {
+    $('.fieldset-important__dropdown-selector-top')
+      .not(this)
+      .each(function () {
+        $(this)
+          .closest('.fieldset-important__dropdown-selector')
+          .find('.fieldset-important__dropdown-selector-bottom')
+          .slideUp();
+        $(this).removeClass('isActive');
+      });
+
+    // Открыть/закрыть выпадающее меню для текущего элемента
+
+    if ($(this).hasClass('isActive')) {
+      $(this)
+        .closest('.fieldset-important__dropdown-selector')
+        .find('.fieldset-important__dropdown-selector-bottom')
+        .slideUp();
+      $(this).removeClass('isActive');
+    } else {
+      $(this)
+        .closest('.fieldset-important__dropdown-selector')
+        .find('.fieldset-important__dropdown-selector-bottom')
+        .slideDown();
+      $(this).addClass('isActive');
+    }
+  }
+  // функция клика по выпадашкам в модалке с чем нужна помощь
+  function checkCheckboxDropdown() {
+    const dataDropdown = $(this).closest('.fieldset-important__dropdown-selector').data('dropdown');
+    const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find(
+      '.fieldset-important__dropdown-selector-item-checkbox'
+    );
+    const val = $(this).next().text().trim();
+
+    let isChecked = $(this).is(':checked');
+    let selectorTopText = $(this)
+      .closest('.fieldset-important__dropdown-selector ')
+      .find('.fieldset-important__dropdown-selector-top-input');
+    let selectorTop = $(this)
+      .closest('.fieldset-important__dropdown-selector')
+      .find('.fieldset-important__dropdown-selector-top');
+    let selectorBottom = $(this)
+      .closest('.fieldset-important__dropdown-selector')
+      .find('.fieldset-important__dropdown-selector-bottom');
+
+    $(checkboxes).each(function () {
+      $(this).prop('checked', false);
+    });
+
+    if (isChecked) {
+      $(this).prop('checked', isChecked);
+      selectorTopText.val(`${val}`);
+      selectorTopText.addClass('isActive');
+    } else {
+      selectorTopText.removeClass('isActive');
+      selectorTopText.val('');
+    }
+
+    selectorTop.removeClass('isActive');
+    selectorBottom.slideUp();
+  }
+
+  $('.test').on('click', '.fieldset-important__dropdown-selector-top', clickDropdownHelp);
+  $('.test').on('click', '.fieldset-important__dropdown-selector-item-checkbox', checkCheckboxDropdown);
+
+  $('.test').on('keyup', '.fieldset-important__dropdown-selector-top-input', function () {
+    var value = $(this).val().toLowerCase();
+    $(this)
+      .closest('.fieldset-important__dropdown-selector')
+      .find('.fieldset-important__dropdown-selector-item-label')
+      .filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+  });
+  $('.test').on('input', '.fieldset-important__dropdown-selector-top-input', function () {
+    if ($(this).val() == '') {
+      const checkboxes = $(this)
+        .closest('.fieldset-important__dropdown-selector')
+        .find('.fieldset-important__dropdown-selector-item-checkbox');
+      checkboxes.prop('checked', false);
+      $(this).removeClass('isActive');
+    }
+  });
+
+  $('.test')
+    .find('.fieldset-important__dropdown-selector-item-checkbox')
+    .each(function () {
+      const dataDropdown = $(this).closest('.fieldset-important__dropdown-selector').data('dropdown');
+      const checkboxes = $(`[data-dropdown="${dataDropdown}"]`).find(
+        '.fieldset-important__dropdown-selector-item-checkbox'
+      );
+      const val = $(this).next().text().trim();
+
+      let isChecked = $(this).is(':checked');
+      let selectorTopText = $(this)
+        .closest('.fieldset-important__dropdown-selector ')
+        .find('.fieldset-important__dropdown-selector-top-input');
+      let selectorTop = $(this)
+        .closest('.fieldset-important__dropdown-selector')
+        .find('.fieldset-important__dropdown-selector-top');
+      let selectorBottom = $(this)
+        .closest('.fieldset-important__dropdown-selector')
+        .find('.fieldset-important__dropdown-selector-bottom');
+
+      if (isChecked) {
+        selectorTopText.val(`${val}`);
+        selectorTopText.addClass('isActive');
+      }
+    });
+
+  const nextBtn = document.querySelectorAll('.test__fieldset-btn-next');
+  const nextPrev = document.querySelectorAll('.test__fieldset-btn-prev');
+  const fieldsets = document.querySelectorAll('.test__fieldset');
+  const points = document.querySelectorAll('.test__point');
+
+  nextBtn.forEach((item) => {
+    item.addEventListener('click', () => {
+      let testNum = item.closest('.test__fieldset').dataset.test;
+
+
+      if (+testNum !== fieldsets.length-1) {
+        fieldsets.forEach((item) => {
+          item.classList.remove('isActive');
+        });
+        points.forEach((item) => {
+          item.classList.remove('isActive');
+        });
+        fieldsets[+testNum + 1].classList.add('isActive');
+        points[+testNum + 1].classList.add('isActive');
+      }
+    });
+  });
+  nextPrev.forEach((item) => {
+    item.addEventListener('click', () => {
+      let testNum = item.closest('.test__fieldset').dataset.test;
+        fieldsets.forEach((item) => {
+          item.classList.remove('isActive');
+        });     
+        points.forEach((item) => {
+          item.classList.remove('isActive');
+        });
+        fieldsets[+testNum - 1].classList.add('isActive');      
+        points[+testNum - 1].classList.add('isActive');
+    });
+  });
+}
