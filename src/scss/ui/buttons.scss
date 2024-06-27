@@ -79,7 +79,8 @@
   border: 0.2rem solid $blue;
   color: $blue;
   transition: background-color 0.5s, color 0.5s;
-  &:hover {
+  &:hover,
+  &.isActive {
     background-color: $blue;
     color: $white;
   }
