@@ -1,0 +1,186 @@
+.article {
+  margin-bottom: 20rem;
+
+  &__container {
+    width: 105.9rem;
+  }
+
+  &__head {
+    margin-bottom: 6rem;
+
+    .article__text {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2.4rem;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 9.2rem;
+    height: 9.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1.6rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    margin-bottom: 0.4rem;
+  }
+
+  &__date {
+    margin-left: auto;
+  }
+
+  &__img {
+    width: 100%;
+    height: 59.6rem;
+    border-radius: 4rem;
+    overflow: hidden;
+    margin-bottom: 6rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 2.4rem;
+  }
+
+  &__text {
+    margin-bottom: 4rem;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 4rem;
+
+    li {
+      position: relative;
+      padding-left: 2.4rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.3rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-image: url(../../assets/images/icons/list-item-icon.svg);
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  &__mark {
+    padding: 3.4rem;
+    border-radius: 4rem;
+    border: 3px solid $green;
+    background-color: $light-gray;
+    box-shadow: 4px 6px 0px 0px #3e4042;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 48em) {
+    margin-bottom: 18rem;
+
+    &__container {
+      width: auto;
+    }
+
+    &__title {
+      margin-bottom: 4rem;
+    }
+
+    &__head {
+      margin-bottom: 8rem;
+
+      .article__text {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &__author {
+      flex-wrap: wrap;
+      row-gap: 4rem;
+    }
+
+    &__avatar {
+      width: 18.4rem;
+      height: 18.4rem;
+      margin-right: 3.2rem;
+    }
+
+    &__descr {
+      width: 49.4rem;
+    }
+
+    &__date {
+      margin-left: 0;
+    }
+
+    &__img {
+      height: 40rem;
+      border-radius: 4rem;
+      margin-bottom: 8rem;
+    }
+
+    &__subtitle {
+      margin-bottom: 4rem;
+    }
+
+    &__text {
+      margin-bottom: 8rem;
+    }
+
+    &__list {
+      margin-bottom: 8rem;
+
+      li {
+        padding-left: 4.8rem;
+
+        &::before {
+          top: 0;
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+
+    &__mark {
+      padding: 5.2rem;
+      border-radius: 4rem;
+      margin-bottom: 8rem;
+    }
+  }
+}
