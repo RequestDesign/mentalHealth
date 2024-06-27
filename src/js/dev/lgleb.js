@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.mission') && missionLineAnimate();
   document.querySelector('.psychologist-info') && window.screen.width > 768 && psychoologistInfoOrder();
   document.querySelector('.psychologist-info') && window.screen.width <= 768 && psychoologistInfoAccordion();
+  document.querySelector('.articles__tabs') && articlesTabs();
 });
 
 const wowAnim = () => {
@@ -111,6 +112,21 @@ const psychoologistInfoAccordion = () => {
     block.style.maxHeight = `${blockInitHeight}px`;
     showBtn.style.display = 'inline';
     hideBtn.style.display = 'none';
+  });
+};
+
+const articlesTabs = () => {
+  const tabsContainer = document.querySelector('.articles__tabs'),
+    tabs = document.querySelectorAll('.articles__tab');
+
+  tabsContainer.addEventListener('click', (e) => {
+    const target = e.target;
+
+    if (target.classList.contains('articles__tab')) {
+      tabs.forEach((tab) => tab.classList.remove('active'));
+
+      target.classList.add('active');
+    }
   });
 };
 
