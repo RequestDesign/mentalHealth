@@ -1,0 +1,1227 @@
+.test {
+  // .test__inner
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    width: 105.6rem;
+    margin: 0 auto;
+    background-color: $white;
+    border-radius: 4rem;
+    padding: 6.4rem;
+    @include small-tablet {
+      width: 100%;
+      padding: 3.2rem;
+      gap: 4.8rem;
+    }
+  }
+
+  // .test__title-box
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 4.8rem;
+    }
+  }
+
+  // .test__title
+
+  &__title {
+  }
+
+  // .test__point-box
+
+  &__point-box {
+    display: flex;
+    align-items: center;
+    gap: 18.9rem;
+    justify-content: flex-end;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      background-color: $gray;
+      height: 0.3rem;
+      @include small-tablet {
+        height: 0.6rem;
+      }
+    }
+    @include small-tablet {
+      gap: 8rem;
+    }
+  }
+
+  // .test__point
+
+  &__point {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 2rem;
+    line-height: 130%;
+
+    flex-shrink: 0;
+    position: relative;
+    z-index: 5;
+    background-color: $blue;
+    transition: background-color 0.5s;
+    &.isActive {
+      & ~ .test__point {
+        background-color: $gray;
+      }
+
+      &[data-point='0'] ~ .test__point-animate {
+        width: 17.6rem;
+        @include small-tablet {
+          width: 9rem;
+        }
+      }
+
+      &[data-point='1'] ~ .test__point-animate {
+        width: 41.9rem;
+        @include small-tablet {
+          width: 25.6rem;
+        }
+      }
+
+      &[data-point='2'] ~ .test__point-animate {
+        width: 67rem;
+        @include small-tablet {
+          width: 41.8rem;
+        }
+      }
+
+      &[data-point='3'] ~ .test__point-animate {
+        width: 92.8rem;
+        @include small-tablet {
+          width: 68.6rem;
+        }
+      }
+    }
+    @include small-tablet {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  // .test__point-animate
+
+  &__point-animate {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 16.8rem;
+    background-color: $blue;
+    height: 0.3rem;
+    transition: width 0.5s;
+    @include small-tablet {
+      height: 0.6rem;
+      width: 9rem;
+    }
+  }
+
+  // .test__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    @include small-tablet {
+    }
+  }
+
+
+  @keyframes fade {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+  }
+
+
+  // .test__fieldset
+
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    border: unset;
+    padding: 0;
+    margin: 0;
+    display: none;
+    &.isActive {
+      display: flex;
+      animation: fade 1s;
+    }
+    @include small-tablet {
+      gap: 4.8rem;
+    }
+  }
+
+  // .test__fieldset-content
+
+  &__fieldset-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .test__fieldset-title
+
+  &__fieldset-title {
+  }
+
+  // .test__fieldset-radio-row
+
+  &__fieldset-radio-row {
+  }
+
+  // .test__fieldset-btn-box
+
+  &__fieldset-btn-box {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    align-self: center;
+    @include small-tablet {
+      width: 100%;
+      justify-content: space-between;
+      &--one-btn {
+        justify-content: center;
+      }
+    }
+  }
+
+  // .test__fieldset-btn-next
+
+  &__fieldset-btn-next {
+    @include small-tablet {
+      align-self: center;
+    }
+  }
+
+  // .test__fieldset-help-box
+
+  &__fieldset-help-box {
+  }
+
+  // .test__fieldset-btn-prev
+
+  &__fieldset-btn-prev {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    &:hover {
+      & .test__fieldset-btn-prev-svg-box {
+        & svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  // .test__fieldset-btn-prev-svg-box
+
+  &__fieldset-btn-prev-svg-box {
+    width: 1.7rem;
+    height: 1.7rem;
+    flex-shrink: 0;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      & path {
+        fill: $blue;
+        transition: fill 0.5s;
+      }
+    }
+    @include small-tablet {
+      display: none;
+    }
+  }
+}
+
+.fieldset-radio {
+  // .fieldset-radio__label
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+  @include small-tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  // .fieldset-radio__input
+
+  &__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    inset: 0;
+    opacity: 0;
+    &:checked + {
+      & .fieldset-radio__text {
+        background-color: $blue;
+        color: $white;
+        &:after {
+          left: -5rem;
+        }
+      }
+    }
+  }
+
+  // .fieldset-radio__text
+
+  &__text {
+    border: 0.2rem solid $blue;
+    border-radius: 4rem;
+    background-color: transparent;
+    transition: background-color 0.5s, color 0.5s;
+    padding: 3.2rem;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 130%;
+    display: block;
+    color: $blue;
+    position: relative;
+    overflow: hidden;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 18.3rem;
+      height: 18.3rem;
+      background-color: rgba(255, 255, 255, 0.4);
+      bottom: 0;
+      left: -5rem;
+      left: -20rem;
+      border-radius: 50%;
+      transition: left 0.5s;
+    }
+    @include small-tablet {
+      font-size: 3.6rem;
+      border-radius: 2.4rem;
+      & br {
+        display: none;
+      }
+    }
+  }
+}
+
+.fieldset-help {
+  // .fieldset-help__title
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  @include small-tablet {
+    gap: 4rem;
+  }
+
+  &__title {
+  }
+
+  // .fieldset-help__list-box
+
+  &__list-box {
+    display: grid;
+    grid-template-columns: repeat(2, 41rem);
+    gap: 6rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // .fieldset-help__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .fieldset-help__label
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  // .fieldset-help__checkbox
+
+  &__checkbox {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    &:checked {
+      & + .fieldset-help__checkbox-text {
+        color: $green;
+        & .fieldset-help__checkbox-text-square {
+          border: 0.2rem solid $green;
+          @include small-tablet {
+            border: 0.4rem solid $green;
+          }
+          &::after {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // .fieldset-help__checkbox-text
+
+  &__checkbox-text {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: border 0.3s;
+    cursor: pointer;
+    pointer-events: none;
+    @include small-tablet {
+      gap: 1.6rem;
+      font-size: 2.8rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-help__checkbox-text-square
+
+  &__checkbox-text-square {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    border: 0.2rem solid $gray;
+    transition: border 0.3s;
+    position: relative;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    flex-shrink: 0;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      display: block;
+      background-color: $green;
+      border-radius: 0.2rem;
+      scale: 0;
+      transition: scale 0.3s;
+      @include small-tablet {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+      border: 0.4rem solid $gray;
+      border-radius: 0.4rem;
+    }
+  }
+}
+
+.fieldset-important {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  @include small-tablet {
+    gap: 4rem;
+  }
+  // .fieldset-important__gender-type-box
+
+  &__gender-type-box {
+    display: flex;
+    align-items: center;
+    gap: 8.4rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+  }
+
+  // .fieldset-important__gender-wrapper
+
+  &__gender-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include small-tablet {
+      gap: 3.2rem;
+    }
+  }
+
+  // .fieldset-important__gender-text
+
+  &__gender-text {
+    @include small-tablet {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-important__gender-box
+
+  &__gender-box {
+    border-radius: 1.6rem;
+    border: 0.2rem solid $gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @include small-tablet {
+      width: 100%;
+      border: 0.4rem solid $gray;
+      border-radius: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__gender
+
+  &__gender {
+    padding: 1.6rem 2.4rem;
+    display: block;
+    width: 16rem;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    transition: color 0.3s;
+    flex-grow: 1;
+    color: $gray;
+    cursor: pointer;
+    &--whatever {
+      @include small-tablet {
+        width: 21.5rem;
+      }
+    }
+    &--female {
+      width: 12rem;
+      @include small-tablet {
+        width: 21rem;
+      }
+    }
+    &--male {
+      width: 12rem;
+      @include small-tablet {
+        width: 21rem;
+      }
+    }
+    &.isActive {
+      color: $white;
+      &.fieldset-important__gender--whatever ~ .fieldset-important__gender-animation {
+        left: -0.2rem;
+        width: 16rem;
+        @include small-tablet {
+          width: 21.5rem;
+        }
+      }
+
+      &.fieldset-important__gender--female ~ .fieldset-important__gender-animation {
+        left: 16rem;
+        width: 12rem;
+        @include small-tablet {
+          left: 21.5rem;
+          width: 21rem;
+        }
+      }
+      &.fieldset-important__gender--male ~ .fieldset-important__gender-animation {
+        left: 28rem;
+        width: 12rem;
+        @include small-tablet {
+          width: 21rem;
+          left: 42.5rem;
+        }
+      }
+    }
+    @include small-tablet {
+      padding: 2.4rem 3.2rem;
+      min-height: 9rem;
+    }
+  }
+
+  // .fieldset-important__gender-animation
+
+  &__gender-animation {
+    position: absolute;
+    width: 16rem;
+    top: -0.2rem;
+    bottom: -0.2rem;
+    background-color: $blue;
+    left: -0.2rem;
+    border-radius: 1.6rem;
+    transition: left 0.3s, width 0.3s;
+    @include small-tablet {
+      width: 21.5rem;
+      border-radius: 2.4rem;
+      top: -0.4rem;
+      bottom: -0.4rem;
+      left: -0.4rem;
+    }
+  }
+
+  // .fieldset-important__type-wrapper
+
+  &__type-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include small-tablet {
+      gap: 3.2rem;
+    }
+  }
+
+  // .fieldset-important__type-text
+
+  &__type-text {
+    @include small-tablet {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-important__type-box
+
+  &__type-box {
+    border-radius: 1.6rem;
+    border: 0.2rem solid $gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @include small-tablet {
+      width: 100%;
+      border: 0.4rem solid $gray;
+      border-radius: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__type
+
+  &__type {
+    padding: 1.6rem 2.4rem;
+    display: block;
+    width: 16rem;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    transition: color 0.3s;
+    flex-grow: 1;
+    color: $gray;
+    cursor: pointer;
+    &--whatever {
+      @include small-tablet {
+        width: 21.5rem;
+      }
+    }
+    &--online {
+      width: 14.2rem;
+      @include small-tablet {
+        width: 21rem;
+      }
+    }
+    &--personal {
+      width: 12.7rem;
+      @include small-tablet {
+        width: 21rem;
+      }
+    }
+    &.isActive {
+      color: $white;
+      &.fieldset-important__type--whatever ~ .fieldset-important__type-animation {
+        left: -0.2rem;
+        width: 16rem;
+        @include small-tablet {
+          width: 21.5rem;
+        }
+      }
+
+      &.fieldset-important__type--online ~ .fieldset-important__type-animation {
+        left: 16rem;
+        width: 14.2rem;
+        @include small-tablet {
+          left: 21.5rem;
+          width: 21rem;
+        }
+      }
+      &.fieldset-important__type--personal ~ .fieldset-important__type-animation {
+        left: 30.2rem;
+        width: 12.7rem;
+        @include small-tablet {
+          width: 21rem;
+          left: 42.5rem;
+        }
+      }
+    }
+    @include small-tablet {
+      padding: 2.4rem 3.2rem;
+    }
+  }
+
+  // .fieldset-important__type-animation
+
+  &__type-animation {
+    position: absolute;
+    width: 16rem;
+    top: -0.2rem;
+    bottom: -0.2rem;
+    background-color: $blue;
+    left: -0.2rem;
+    border-radius: 1.6rem;
+    transition: left 0.3s, width 0.3s;
+    @include small-tablet {
+      width: 21.5rem;
+      border-radius: 2.4rem;
+      top: -0.4rem;
+      bottom: -0.4rem;
+      left: -0.4rem;
+    }
+  }
+
+  // .fieldset-important__age-wrapper
+
+  &__age-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    flex-grow: 1;
+    @include small-tablet {
+      gap: 3.2rem;
+      width: 100%;
+    }
+  }
+
+  // .fieldset-important__age-title
+
+  &__age-title {
+    @include small-tablet {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-important__age-box
+
+  &__age-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+    @include small-tablet {
+      // align-items: flex-start;
+      flex-direction: column;
+      gap: 9.6rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  // .fieldset-important__age-btn
+
+  &__age-btn {
+    padding: 2rem 3.2rem;
+    color: $white;
+    background-color: $blue;
+    border-radius: 1.6rem;
+    @include small-tablet {
+      width: 100%;
+      text-align: center;
+      padding: 2.4rem 3.6rem;
+      border-radius: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__age-range
+
+  &__age-range {
+    flex-grow: 1;
+    padding: 0 1rem 0 0;
+    @include small-tablet {
+      width: 100%;
+      padding: 0 3rem 0 8rem;
+      margin: 0 auto;
+    }
+  }
+
+  // .fieldset-important__dropdown-wrapper
+
+  &__dropdown-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-box
+
+  &__dropdown-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.6rem;
+    @include small-tablet {
+      gap: 3.2rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-text
+
+  &__dropdown-text {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 130%;
+
+    @include small-tablet {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 130%;
+      margin-top: 0.8rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector
+
+  &__dropdown-selector {
+    min-width: 28rem;
+    position: relative;
+    // z-index: 5;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-top
+
+  &__dropdown-selector-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 2.4rem;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    border: 0.2rem solid $gray;
+    gap: 1rem;
+    &.isActive {
+      & img {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @include small-tablet {
+      padding: 2.4rem 4rem;
+      border-radius: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-top-input
+
+  &__dropdown-selector-top-input {
+    transition: font-weight 0.3s;
+    flex-grow: 1;
+    &.isActive {
+      font-weight: 500;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-top-svg-box
+
+  &__dropdown-selector-top-svg-box {
+    width: 1.8rem;
+    height: 1.8rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    @include small-tablet {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-bottom
+
+  &__dropdown-selector-bottom {
+    background-color: $white;
+    border-radius: 1.6rem;
+    padding: 3.2rem;
+    width: 100%;
+    top: 7rem;
+    position: absolute;
+    display: none;
+    border: 0.2rem solid $gray;
+    z-index: 50;
+    @include small-tablet {
+      top: 10rem;
+      padding: 3.2rem 4rem;
+      border-radius: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-bottom-list
+
+  &__dropdown-selector-bottom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-height: 15.5rem;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+    }
+    &::-webkit-scrollbar-track {
+      background: $gray;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $green;
+    }
+
+    @include small-tablet {
+      max-height: 24rem;
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-item-label
+
+  &__dropdown-selector-item-label {
+    position: relative;
+  }
+
+  // .fieldset-important__dropdown-selector-item-checkbox
+
+  &__dropdown-selector-item-checkbox {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    &:checked {
+      & + .fieldset-important__dropdown-selector-item {
+        color: $green;
+        & .fieldset-important__dropdown-selector-item-checkbox-square {
+          border: 0.2rem solid $green;
+          @include small-tablet {
+            border: 0.4rem solid $green;
+          }
+          &::after {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // .fieldset-important__dropdown-selector-item
+
+  &__dropdown-selector-item {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: border 0.3s;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  // .fieldset-important__dropdown-selector-item-checkbox-square
+
+  &__dropdown-selector-item-checkbox-square {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    border: 0.2rem solid $gray;
+    border-radius: 0.2rem;
+    transition: border 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      display: block;
+      background-color: $green;
+      border-radius: 0.2rem;
+      scale: 0;
+      transition: scale 0.3s;
+      @include small-tablet {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    @include small-tablet {
+      border-radius: 0.4rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      border: 0.4rem solid $gray;
+    }
+  }
+
+  // .fieldset-important__checkbox-box
+
+  &__checkbox-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include small-tablet {
+      gap: 2.4rem;
+    }
+  }
+
+  // .fieldset-important__label
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  // .fieldset-important__checkbox
+
+  &__checkbox {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    &:checked {
+      & + .fieldset-important__checkbox-text {
+        color: $green;
+        & .fieldset-important__checkbox-text-square {
+          border: 0.2rem solid $green;
+          @include small-tablet {
+            border: 0.4rem solid $green;
+          }
+          &::after {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // .fieldset-important__checkbox-text
+
+  &__checkbox-text {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: border 0.3s;
+    cursor: pointer;
+    pointer-events: none;
+    @include small-tablet {
+      gap: 1.6rem;
+      font-weight: 500;
+      font-size: 2.8rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-important__checkbox-text-square
+
+  &__checkbox-text-square {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    border: 0.2rem solid $gray;
+    transition: border 0.3s;
+    position: relative;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    flex-shrink: 0;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      display: block;
+      background-color: $green;
+      border-radius: 0.2rem;
+      scale: 0;
+      transition: scale 0.3s;
+      @include small-tablet {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+      border: 0.4rem solid $gray;
+      border-radius: 0.4rem;
+    }
+  }
+}
+
+.fieldset-cost {
+  display: flex;
+  flex-direction: column;
+  // .fieldset-cost__label
+
+  &__label {
+    padding: 2.4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    position: relative;
+    &:not(:last-of-type) {
+      border-bottom: 0.3rem solid $gray;
+    }
+    @include small-tablet {
+      padding: 3.6rem 0;
+      &:not(:last-of-type) {
+        border-bottom: 0.2rem solid $gray;
+      }
+    }
+  }
+
+  // .fieldset-cost__input-box
+
+  &__input-box {
+  }
+
+  // .fieldset-cost__checkbox
+
+  &__checkbox {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    &:checked {
+      & + .fieldset-cost__checkbox-text {
+        color: $green;
+        & .fieldset-cost__checkbox-text-square {
+          border: 0.2rem solid $green;
+          @include small-tablet {
+            border: 0.4rem solid $green;
+          }
+          &::after {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // .fieldset-cost__checkbox-text
+
+  &__checkbox-text {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: border 0.3s;
+    cursor: pointer;
+    pointer-events: none;
+    @include small-tablet {
+      gap: 1.6rem;
+      font-weight: 500;
+      font-size: 2.8rem;
+      line-height: 130%;
+    }
+  }
+
+  // .fieldset-cost__checkbox-text-square
+
+  &__checkbox-text-square {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    border: 0.2rem solid $gray;
+    transition: border 0.3s;
+    position: relative;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    flex-shrink: 0;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      display: block;
+      background-color: $green;
+      border-radius: 0.2rem;
+      scale: 0;
+      transition: scale 0.3s;
+      @include small-tablet {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+      border: 0.4rem solid $gray;
+      border-radius: 0.4rem;
+    }
+  }
+
+  // .fieldset-cost__desc-text
+
+  &__desc-text {
+  }
+}

@@ -10,7 +10,771 @@
       <include src="./components/_header.html"></include>
       <include src="./components/_popup.html"></include>
       <main>
+        <section class="test wow animate__fadeIn" data-wow-delay="0.1s">
+          <div class="container">
+            <div class="test__inner">
+              <div class="test__title-box">
+                <p class="test__title tl1">Подбор специалиста</p>
+                <div class="test__point-box">
+                  <div class="test__point isActive" data-point="0">1</div>
+                  <div class="test__point" data-point="1">2</div>
+                  <div class="test__point" data-point="2">3</div>
+                  <div class="test__point" data-point="3">4</div>
+                  <div class="test__point-animate"></div>
+                </div>
+              </div>
+              <div class="test__form">
+                <fieldset class="test__fieldset isActive" data-test="0">
+                  <div class="test__fieldset-content">
+                    <p class="test__fieldset-title tl3">Для кого нужен специалист?</p>
+                    <div class="test__fieldset-radio-row fieldset-radio">
+                      <label class="fieldset-radio__label">
+                        <input class="fieldset-radio__input" type="radio" name="for-whom" />
+                        <span class="fieldset-radio__text">Индивидуальный <br> (для себя) </span>
+                      </label>
+                      <label class="fieldset-radio__label">
+                        <input class="fieldset-radio__input" type="radio" name="for-whom" checked />
+                        <span class="fieldset-radio__text">Семейный <br> (для пары) </span>
+                      </label>
+                      <label class="fieldset-radio__label">
+                        <input class="fieldset-radio__input" type="radio" name="for-whom" />
+                        <span class="fieldset-radio__text">Для ребёнка <br> (подростка) </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="test__fieldset-btn-box test__fieldset-btn-box--one-btn">
+                    <button class="test__fieldset-btn-next button-shadow button-shadow--green">
+                      <span class="button-shadow-text txt16 txt16_caps">Далее</span>
+                      <span class="button-shadow-svg-box">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </fieldset>
 
+                <fieldset class="test__fieldset" data-test="1">
+                  <div class="test__fieldset-content">
+                    <p class="test__fieldset-title tl3">С чем необходима помощь?</p>
+
+                    <div class="test__fieldset-help-box fieldset-help">
+                      <p class="fieldset-help__title txt20">Выберите 2-4 проблемы, которые Вас волнуют.</p>
+                      <div class="fieldset-help__list-box">
+                        <div class="fieldset-help__list">
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Тревожные состояния и нарушения сна
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                              checked
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Семья и дети
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Депрессия, сниженное настроение, упадок сил
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Сложный момент в жизни
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Отношения с партнером (партнёрами)
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Психологические травмы
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Отношения с собой
+                            </span>
+                          </label>
+                        </div>
+
+                        <div class="fieldset-help__list">
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Работа и личная эффективность
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Отношения с телом и едой
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Расстройства личности
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Зависимости
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Отношения с людьми в целом
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Когнитивные и эмоциональные трудности
+                            </span>
+                          </label>
+
+                          <label class="fieldset-help__label">
+                            <input
+                              class="fieldset-help__checkbox"
+                              data-checkbox="Опыт работы с альтернативными взглядами на отношения"
+                              type="checkbox"
+                              checked
+                            />
+                            <span class="fieldset-help__checkbox-text txt16">
+                              <span class="fieldset-help__checkbox-text-square"></span>
+                              Другое
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="test__fieldset-btn-box">
+                    <button class="test__fieldset-btn-prev button-border">
+                      <div class="test__fieldset-btn-prev-svg-box desktop">
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.292893 7.79289C-0.0976314 8.18342 -0.0976315 8.81658 0.292892 9.20711L6.65685 15.5711C7.04738 15.9616 7.68054 15.9616 8.07107 15.5711C8.46159 15.1805 8.46159 14.5474 8.07107 14.1569L2.41421 8.5L8.07107 2.84315C8.46159 2.45262 8.46159 1.81946 8.07107 1.42893C7.68054 1.03841 7.04738 1.03841 6.65685 1.42893L0.292893 7.79289ZM17 7.5L1 7.5L1 9.5L17 9.5L17 7.5Z"
+                            fill="#365F7B"
+                          />
+                        </svg>
+                      </div>
+                      <span class="button-shadow-text txt16 txt16_caps">назад</span>
+                    </button>
+                    <button class="test__fieldset-btn-next button-shadow button-shadow--green">
+                      <span class="button-shadow-text txt16 txt16_caps">Далее</span>
+                      <span class="button-shadow-svg-box">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </fieldset>
+
+                <fieldset class="test__fieldset" data-test="2">
+                  <div class="test__fieldset-content">
+                    <p class="test__fieldset-title tl3">Что важно в специалисте?</p>
+
+                    <div class="test__fieldset-help-box fieldset-important">
+                      <div class="fieldset-important__gender-type-box">
+                        <div class="fieldset-important__gender-wrapper">
+                          <p class="fieldset-important__gender-text txt20">Пол специалиста</p>
+                          <div class="fieldset-important__gender-box">
+                            <div
+                              class="fieldset-important__gender fieldset-important__gender--whatever isActive txt20"
+                            >
+                              Неважно
+                            </div>
+                            <div class="fieldset-important__gender fieldset-important__gender--female txt20">
+                              Жен
+                            </div>
+                            <div class="fieldset-important__gender fieldset-important__gender--male txt20">
+                              Муж
+                            </div>
+                            <div class="fieldset-important__gender-animation"></div>
+                          </div>
+                        </div>
+
+                        <div class="fieldset-important__type-wrapper">
+                          <p class="fieldset-important__type-text txt20">Тип консультации</p>
+                          <div class="fieldset-important__type-box">
+                            <div
+                              class="fieldset-important__type fieldset-important__type--whatever isActive txt20"
+                            >
+                              Неважно
+                            </div>
+                            <div class="fieldset-important__type fieldset-important__type--online txt20">
+                              Онлайн
+                            </div>
+                            <div class="fieldset-important__type fieldset-important__type--personal txt20">
+                              Лично
+                            </div>
+                            <div class="fieldset-important__type-animation"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="fieldset-important__age-wrapper">
+                        <p class="fieldset-important__age-title txt20">Возраст специалиста</p>
+                        <div class="fieldset-important__age-box">
+                          <button class="fieldset-important__age-btn txt20">Не важно</button>
+                          <div
+                            class="fieldset-important__age-range"
+                            data-min="25"
+                            data-max="65"
+                            data-current="25,65"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div class="fieldset-important__dropdown-wrapper">
+                        <div class="fieldset-important__dropdown-box">
+                          <p class="fieldset-important__dropdown-text txt20">Локация</p>
+                          <div class="fieldset-important__dropdown-selector" data-dropdown="town">
+                            <div class="fieldset-important__dropdown-selector-top">
+                              <input
+                                class="fieldset-important__dropdown-selector-top-input txt20"
+                                type="text"
+                                name=""
+                                id=""
+                                placeholder="Город"
+                              />
+                              <div class="fieldset-important__dropdown-selector-top-svg-box">
+                                <img src="./assets/images/icons/arr-bottom.svg" alt="" />
+                              </div>
+                            </div>
+                            <div class="fieldset-important__dropdown-selector-bottom">
+                              <div class="fieldset-important__dropdown-selector-bottom-list">
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Москва
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Самара
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Санкт-Петербург
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Калуга
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Казань
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="fieldset-important__dropdown-box">
+                          <div class="fieldset-important__dropdown-selector" data-dropdown="metro">
+                            <div class="fieldset-important__dropdown-selector-top">
+                              <input
+                                class="fieldset-important__dropdown-selector-top-input txt20"
+                                type="text"
+                                name=""
+                                id=""
+                                placeholder="Метро"
+                              />
+                              <div class="fieldset-important__dropdown-selector-top-svg-box">
+                                <img src="./assets/images/icons/arr-bottom.svg" alt="" />
+                              </div>
+                            </div>
+                            <div class="fieldset-important__dropdown-selector-bottom">
+                              <div class="fieldset-important__dropdown-selector-bottom-list">
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Охотный ряд
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Академическая
+                                  </span>
+                                </label>
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Проспект Мира
+                                  </span>
+                                </label>
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Кантемировская
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="fieldset-important__dropdown-box">
+                          <p class="fieldset-important__dropdown-text txt20">Образование</p>
+                          <div class="fieldset-important__dropdown-selector" data-dropdown="education">
+                            <div class="fieldset-important__dropdown-selector-top">
+                              <input
+                                class="fieldset-important__dropdown-selector-top-input txt20"
+                                type="text"
+                                name=""
+                                id=""
+                                placeholder="Не важно"
+                              />
+                              <div class="fieldset-important__dropdown-selector-top-svg-box">
+                                <img src="./assets/images/icons/arr-bottom.svg" alt="" />
+                              </div>
+                            </div>
+                            <div class="fieldset-important__dropdown-selector-bottom">
+                              <div class="fieldset-important__dropdown-selector-bottom-list">
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Высшее
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Среднее
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="fieldset-important__dropdown-box">
+                          <p class="fieldset-important__dropdown-text txt20">Методы работы</p>
+                          <div class="fieldset-important__dropdown-selector" data-dropdown="methods">
+                            <div class="fieldset-important__dropdown-selector-top">
+                              <input
+                                class="fieldset-important__dropdown-selector-top-input txt20"
+                                type="text"
+                                name=""
+                                id=""
+                                placeholder="Не важно"
+                              />
+                              <div class="fieldset-important__dropdown-selector-top-svg-box">
+                                <img src="./assets/images/icons/arr-bottom.svg" alt="" />
+                              </div>
+                            </div>
+                            <div class="fieldset-important__dropdown-selector-bottom">
+                              <div class="fieldset-important__dropdown-selector-bottom-list">
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                    checked
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    Психоаналитическая терапия
+                                  </span>
+                                </label>
+
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    метод интерпретации
+                                  </span>
+                                </label>
+                                <label class="fieldset-important__dropdown-selector-item-label" for="">
+                                  <input
+                                    class="fieldset-important__dropdown-selector-item-checkbox"
+                                    type="checkbox"
+                                  />
+                                  <span class="fieldset-important__dropdown-selector-item txt20">
+                                    <span
+                                      class="fieldset-important__dropdown-selector-item-checkbox-square"
+                                    ></span>
+                                    метод свободных ассоциаций
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="fieldset-important__checkbox-box">
+                        <label class="fieldset-important__label">
+                          <input class="fieldset-important__checkbox" type="checkbox" />
+                          <span class="fieldset-important__checkbox-text txt16"
+                            ><span class="fieldset-important__checkbox-text-square"></span>Опыт работы с
+                            альтернативными взглядами на отношения</span
+                          >
+                        </label>
+                        <label class="fieldset-important__label">
+                          <input class="fieldset-important__checkbox" type="checkbox" checked />
+                          <span class="fieldset-important__checkbox-text txt16"
+                            ><span class="fieldset-important__checkbox-text-square"></span>Опыт работы с
+                            детьми</span
+                          >
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="test__fieldset-btn-box">
+                    <button class="test__fieldset-btn-prev button-border">
+                      <div class="test__fieldset-btn-prev-svg-box desktop">
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.292893 7.79289C-0.0976314 8.18342 -0.0976315 8.81658 0.292892 9.20711L6.65685 15.5711C7.04738 15.9616 7.68054 15.9616 8.07107 15.5711C8.46159 15.1805 8.46159 14.5474 8.07107 14.1569L2.41421 8.5L8.07107 2.84315C8.46159 2.45262 8.46159 1.81946 8.07107 1.42893C7.68054 1.03841 7.04738 1.03841 6.65685 1.42893L0.292893 7.79289ZM17 7.5L1 7.5L1 9.5L17 9.5L17 7.5Z"
+                            fill="#365F7B"
+                          />
+                        </svg>
+                      </div>
+                      <span class="button-shadow-text txt16 txt16_caps">назад</span>
+                    </button>
+                    <button class="test__fieldset-btn-next button-shadow button-shadow--green">
+                      <span class="button-shadow-text txt16 txt16_caps">Далее</span>
+                      <span class="button-shadow-svg-box">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </fieldset>
+
+                <fieldset class="test__fieldset" data-test="3">
+                  <div class="test__fieldset-content">
+                    <p class="test__fieldset-title tl3">Какую сумму Вам комфортно платить за сессию?</p>
+
+                    <div class="test__fieldset-help-box fieldset-cost">
+                      <label class="fieldset-cost__label">
+                        <span class="fieldset-cost__input-box">
+                          <input class="fieldset-cost__checkbox" type="checkbox" />
+                          <span class="fieldset-cost__checkbox-text txt16"
+                            ><span class="fieldset-cost__checkbox-text-square"></span>До 3 000</span
+                          ></span
+                        >
+                        <span class="fieldset-cost__desc-text txt16"
+                          >Доступные консультации с начинающими и не только специалистами</span
+                        >
+                      </label>
+                      <label class="fieldset-cost__label">
+                        <span class="fieldset-cost__input-box">
+                          <input class="fieldset-cost__checkbox" type="checkbox" checked />
+                          <span class="fieldset-cost__checkbox-text txt16"
+                            ><span class="fieldset-cost__checkbox-text-square"></span>От 3 000 до 5 000</span
+                          >
+                        </span>
+                        <span class="fieldset-cost__desc-text txt16"
+                          >Глубокий анализ с опытными психологами</span
+                        >
+                      </label>
+                      <label class="fieldset-cost__label">
+                        <span class="fieldset-cost__input-box">
+                          <input class="fieldset-cost__checkbox" type="checkbox" />
+                          <span class="fieldset-cost__checkbox-text txt16"
+                            ><span class="fieldset-cost__checkbox-text-square"></span>от 5 000 до 7 000</span
+                          >
+                        </span>
+                        <span class="fieldset-cost__desc-text txt16"
+                          >Индивидуальный подход с профессиональными психологами</span
+                        >
+                      </label>
+                      <label class="fieldset-cost__label">
+                        <span class="fieldset-cost__input-box">
+                          <input class="fieldset-cost__checkbox" type="checkbox" />
+                          <span class="fieldset-cost__checkbox-text txt16"
+                            ><span class="fieldset-cost__checkbox-text-square"></span>от 7 000 до 10 000</span
+                          >
+                        </span>
+                        <span class="fieldset-cost__desc-text txt16">Экспертная помощь от психологов</span>
+                      </label>
+
+                      <label class="fieldset-cost__label">
+                        <span class="fieldset-cost__input-box">
+                          <input class="fieldset-cost__checkbox" type="checkbox" />
+                          <span class="fieldset-cost__checkbox-text txt16"
+                            ><span class="fieldset-cost__checkbox-text-square"></span>Не важно</span
+                          >
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="test__fieldset-btn-box">
+                    <button class="test__fieldset-btn-prev button-border">
+                      <div class="test__fieldset-btn-prev-svg-box desktop">
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.292893 7.79289C-0.0976314 8.18342 -0.0976315 8.81658 0.292892 9.20711L6.65685 15.5711C7.04738 15.9616 7.68054 15.9616 8.07107 15.5711C8.46159 15.1805 8.46159 14.5474 8.07107 14.1569L2.41421 8.5L8.07107 2.84315C8.46159 2.45262 8.46159 1.81946 8.07107 1.42893C7.68054 1.03841 7.04738 1.03841 6.65685 1.42893L0.292893 7.79289ZM17 7.5L1 7.5L1 9.5L17 9.5L17 7.5Z"
+                            fill="#365F7B"
+                          />
+                        </svg>
+                      </div>
+                      <span class="button-shadow-text txt16 txt16_caps">назад</span>
+                    </button>
+                    <button
+                      data-popup="#popup__feedback-test"
+                      class="test__fieldset-btn-next button-shadow button-shadow--green"
+                    >
+                      <span class="button-shadow-text txt16 txt16_caps">Подобрать</span>
+                      <span class="button-shadow-svg-box">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 1V6M6 6H11M6 6H1M6 6V11"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <include src="./components/_footer.html"></include>
     </div>
