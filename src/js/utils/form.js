@@ -9,27 +9,10 @@ const form = () => {
   formSubmit();
   nameValidate();
   phoneMask();
-  dateMask();
   telValidate();
   mailValidate();
-  inputPlaceholder();
   inputFile();
 
-  function inputPlaceholder() {
-    $('input')
-      .not('[type="file"]')
-      .focus(function () {
-        $(this).next().hide();
-      });
-
-    $('input')
-      .not('[type="file"]')
-      .blur(function () {
-        if ($(this).val().trim() === '') {
-          $(this).next().show(); // Используем метод next() вместо nextElementSibling
-        }
-      });
-  }
   function nameValidate() {
     const name = document.querySelectorAll('.input--name');
     name.forEach((item) => {
@@ -64,10 +47,6 @@ const form = () => {
   function phoneMask() {
     const mask = new Inputmask('+7 (999) 999-99-99');
     mask.mask($('.phone-mask'));
-  }
-  function dateMask() {
-    const mask = new Inputmask('99.99.9999г');
-    mask.mask($('.input--date'));
   }
   function telValidate() {
     const tel = document.querySelectorAll('.input--tel');
@@ -204,48 +183,6 @@ const form = () => {
       $(this).parent().remove();
     });
   }
-  function setupFormListener(formSelector, submitButtonSelector) {
-    const form = document.querySelector(formSelector);
-    const submitButton = document.querySelector(submitButtonSelector);
-
-    const formElements = form.querySelectorAll('input[data-required], textarea[data-required]');
-
-    const formElementCheckbox = form.querySelectorAll('.popup__input-checkbox');
-    const formElementsParents = form.querySelectorAll('.input-group');
-
-    function updateSubmitButtonState() {
-      const isEmpty = Array.from(formElements).some((element) => {
-        return element.value.trim() === '';
-      });
-      const formError = Array.from(formElementsParents).some((element) => {
-        return element.classList.contains('_form-error');
-      });
-
-      const formErrorCheckbox = Array.from(formElementCheckbox).some((element) => {
-        return !element.checked;
-      });
-
-      if (isEmpty || formError || formErrorCheckbox) {
-        submitButton.setAttribute('disabled', 'disabled');
-      } else {
-        submitButton.removeAttribute('disabled');
-      }
-    }
-
-    formElements.forEach((element) => {
-      element.addEventListener('input', updateSubmitButtonState);
-    });
-
-    updateSubmitButtonState();
-  }
-
-  setupFormListener('.application__form', '.application__btn');
-  setupFormListener('.application__summary-form', '.application__summary-btn');
-  setupFormListener('.application__demo-form', '.application__demo-btn');
-  setupFormListener('.popup__form--application', '.popup__btn--application');
-  setupFormListener('.popup__form--choice', '.popup__btn--choice');
-  setupFormListener('.popup__form--demo', '.popup__btn--demo');
-  setupFormListener('.popup__form--summary', '.popup__btn--summary');
 };
 
 export default form;

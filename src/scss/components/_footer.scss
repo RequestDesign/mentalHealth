@@ -1,4 +1,8 @@
 .footer {
+  margin-top: 20rem;
+  @include small-tablet {
+    margin: 22rem 0 0;
+  }
 }
 .footer-form {
   // .footer-form__inner
