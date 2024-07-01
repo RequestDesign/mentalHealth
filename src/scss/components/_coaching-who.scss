@@ -1,0 +1,299 @@
+.coaching-who {
+  // .coaching-who__inner
+
+  &__inner {
+    display: flex;
+    gap: 16.8rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4.8rem;
+    }
+  }
+
+  // .coaching-who__content-box
+
+  &__content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4.6rem;
+    width: 76.4rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+      gap: 4rem;
+    }
+  }
+
+  // .coaching-who__content-title
+
+  &__content-title {
+  }
+
+  // .coaching-who__content-text-wrapper
+
+  &__content-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include small-tablet {
+      gap: 0;
+    }
+  }
+
+  // .coaching-who__content-text-box
+
+  &__content-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include small-tablet {
+      gap: 0;
+    }
+    &--show {
+    }
+
+    &--hide {
+      @media (min-width: 48em) {
+        display: flex !important;
+      }
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+  }
+
+  // .coaching-who__content-text
+
+  &__content-text {
+  }
+
+  // .coaching-who__content-show
+
+  &__content-show {
+    color: $green;
+    text-decoration: underline;
+  }
+
+  // .coaching-who__content-hide
+
+  &__content-hide {
+    color: $green;
+    text-decoration: underline;
+  }
+
+  // .coaching-who__aside
+
+  &__aside {
+    width: 64.8rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 4rem;
+    }
+  }
+
+  // .coaching-who__aside-item
+
+  &__aside-item {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border-radius: 4rem;
+    overflow: hidden;
+    justify-content: space-between;
+    padding-right: 2rem;
+    @include small-tablet {
+      padding-right: 2.4rem;
+    }
+  }
+
+  // .coaching-who__aside-content-box
+
+  &__aside-content-box {
+    display: flex;
+    align-items: center;
+    gap: 2.7rem;
+    @include small-tablet {
+      gap: 5.4rem;
+    }
+  }
+
+  // .coaching-who__aside-item-svg-wrapper
+
+  &__aside-item-svg-wrapper {
+    width: 10.4rem;
+    height: 100%;
+    min-height: 11.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include small-tablet {
+      width: 16.2rem;
+      min-height: 17.4rem;
+    }
+  }
+
+  // .coaching-who__aside-item-svg-bg-box
+
+  &__aside-item-svg-bg-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  // .coaching-who__aside-item-svg-box
+
+  &__aside-item-svg-box {
+    position: relative;
+    z-index: 5;
+    width: 2.4rem;
+    height: 2.4rem;
+    & svg,
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+
+  // .coaching-who__aside-info-box
+
+  &__aside-info-box {
+  }
+
+  // .coaching-who__aside-info-title
+
+  &__aside-info-title {
+    & span {
+      font-family: 'Inter';
+      font-size: 2.4rem;
+      @include small-tablet {
+        font-size: 4.4rem;
+      }
+    }
+  }
+
+  // .coaching-who__aside-info-category
+
+  &__aside-info-category {
+  }
+
+  // .coaching-who__call-button
+
+  &__call-button {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 0.2rem solid $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include small-tablet {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  // .coaching-who__call-button-svg-box
+
+  &__call-button-svg-box {
+    width: 1.2rem;
+    height: 1.2rem;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+  }
+
+  // .coaching-who__aside-order
+
+  &__aside-order {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 37.5rem;
+    padding: 4rem;
+    border-radius: 4rem;
+    background-color: $green;
+    color: $white;
+    overflow: hidden;
+    @include small-tablet {
+      border-radius: 4rem;
+      padding: 3.2rem;
+      min-height: 91.6rem;
+    }
+  }
+
+  // .coaching-who__aside-order-phone
+
+  &__aside-order-phone {
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+    @include small-tablet {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  // .coaching-who__aside-order-text
+
+  &__aside-order-text {
+    position: relative;
+    z-index: 2;
+    max-width: 33.5rem;
+    @include small-tablet {
+      margin-bottom: 4.8rem;
+      max-width: none;
+    }
+  }
+
+  // .coaching-who__button
+
+  &__button {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    @include small-tablet {
+      margin-top: 0;
+    }
+  }
+
+  // .coaching-who__aside-order-img
+
+  &__aside-order-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32.4rem;
+    height: 31.4rem;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      height: 57.2rem;
+    }
+  }
+}
