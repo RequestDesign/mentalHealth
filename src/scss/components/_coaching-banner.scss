@@ -1,0 +1,119 @@
+.coaching-banner {
+  margin-top: -8rem;
+  // .coaching-banner__container
+  @include small-tablet {
+    margin-top: -10rem;
+  }
+  &__container {
+    max-width: 192rem;
+    width: 100%;
+    border-radius: 0 0 8rem 8rem;
+    background-color: $white;
+    overflow: hidden;
+    @include small-tablet {
+      padding: 0;
+      border-radius: 0 0 4rem 4rem;
+    }
+  }
+
+  // .coaching-banner__inner
+
+  &__inner {
+    margin: 0 auto;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    padding: 15.4rem 0 0 14rem;
+    position: relative;
+    @include small-tablet {
+      width: 100%;
+      padding: 28.8rem 2rem 0;
+      gap: 0;
+      flex-direction: column;
+    }
+  }
+
+  // .coaching-banner__content-box
+
+  &__content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    width: 76.8rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+      gap: 4.8rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+
+  // .coaching-banner__title-box
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  // .coaching-banner__title
+
+  &__title {
+  }
+
+  // .coaching-banner__desc
+
+  &__desc {
+    width: 52.4rem;
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  // .coaching-banner__btn-box
+
+  &__btn-box {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    @include small-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+  
+    }
+  }
+
+  // .coaching-banner__btn
+
+  &__btn {
+  }
+
+  // .coaching-banner__link
+
+  &__link {
+    background-color: $white;
+  }
+
+  // .coaching-banner__img-box
+
+  &__img-box {
+    width: 95rem;
+    height: 80rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 70rem;
+      height: 58rem;
+      align-self: flex-end;
+      margin-right: -10rem;
+      margin-top: -8rem;
+    }
+  }
+}

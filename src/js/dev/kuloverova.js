@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     servicesTabsSwiper();
   } catch {}
   try {
+    coachingWho ()
+  } catch {}
+  try {
     if (window.innerWidth > 768) {
       helpWithAnim();
     } else {
@@ -1865,4 +1868,15 @@ function testPage() {
         points[+testNum - 1].classList.add('isActive');
     });
   });
+}
+
+function coachingWho () {
+  $('.coaching-who').on('click','.coaching-who__content-show', function () {
+    $('.coaching-who__content-text-box--hide').slideDown()
+    $('.coaching-who__content-show').hide(300)
+  })
+  $('.coaching-who').on('click','.coaching-who__content-hide', function () {
+    $('.coaching-who__content-text-box--hide').slideUp()
+    $('.coaching-who__content-show').show(300)
+  })
 }
