@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.psychologist-info') && window.screen.width > 768 && psychoologistInfoOrder();
   document.querySelector('.psychologist-info') && window.screen.width <= 768 && psychoologistInfoAccordion();
   document.querySelector('.articles__tabs') && articlesTabs();
+  document.querySelector('.reviews') && reviewAccordion();
 });
 
 const wowAnim = () => {
@@ -112,6 +113,44 @@ const psychoologistInfoAccordion = () => {
     block.style.maxHeight = `${blockInitHeight}px`;
     showBtn.style.display = 'inline';
     hideBtn.style.display = 'none';
+  });
+};
+
+const reviewAccordion = () => {
+  const items = document.querySelectorAll('.reviews__item');
+
+  items.forEach((item) => {
+    const textWrapper = item.querySelector('.reviews__item-text'),
+      textContainer = item.querySelector('.reviews__item-text')?.children[0],
+      textContent = item.querySelector('.reviews__item-text')?.children[0].textContent,
+      toggleBtn = item.querySelector('.reviews__item-text')?.children[1],
+      textInitialHeight = textWrapper?.clientHeight,
+      textScrollHeight = textWrapper?.scrollHeight;
+
+    if (!textWrapper || !toggleBtn) {
+      return;
+    }
+
+    let abbriveatedText = textContent.slice(0, 501) + '...';
+
+    textContainer.textContent = abbriveatedText;
+
+    toggleBtn.addEventListener('click', () => {
+      item.classList.toggle('active');
+
+      if (item.classList.contains('active')) {
+        textWrapper.style.maxHeight = `${textScrollHeight + rem(window.screen.width > 768 ? 4 : 15)}px`;
+        textContainer.textContent = textContent;
+        toggleBtn.textContent = 'свернуть';
+      } else {
+        textWrapper.style.maxHeight = `${textInitialHeight}px`;
+        toggleBtn.textContent = 'читать дальше';
+
+        setTimeout(() => {
+          textContainer.textContent = abbriveatedText;
+        }, 490);
+      }
+    });
   });
 };
 
