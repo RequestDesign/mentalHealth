@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=baf2c816-f3bd-4189-98d8-72b7e716c191&lang=ru_RU" type="text/javascript">
+    </script>
+    <title>Главная</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <include src="./components/_header.html"></include>
+        <include src="./components/_popup.html"></include>
+        <main class="contacts-main">
+            <section class="breadcrumb">
+                <div class="container">
+                  <nav class="breadcrumb__list-wrap title-h5">
+                    <ul class="breadcrumb__list">
+                      <li class="breadcrumb__link txt16"><a href="#">Главная</a></li>
+                      <li class="breadcrumb__link breadcrumb__link_green txt16">Контакты</li>
+                    </ul>
+                  </nav>
+                </div>
+              </section>
+            <section class="contacts">
+                <div class="container">
+                    <div class="contacts__c">
+                        <div class="contacts__c-info">
+                            <p class="contacts__c-head tl2">Контакты</p>
+                            <p class="contacts__c-info-body">Свяжитесь с нами любым удобным способом</p>
+                            <a class="contacts__c-info-item tl4" href="tel:880000000">
+                                <img src="./assets/images/icons/phone.svg" alt="phone">
+                                8 800 000 00 00
+                            </a>
+                            <a class="contacts__c-info-item tl4" href="mailto:example@mail.com">
+                               <img src="./assets/images/icons/mail-blue.svg" alt="mail">
+                                forexample@.com
+                            </a>
+                            <a class="contacts__c-info-item tl4" href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./assets/images/icons/location.svg" alt="location">
+
+                                г. Южно-Сахалинск, ул. Пожарского, д.22
+                            </a>
+                        </div>
+                        <div class="contacts__c-requisit">
+                            <p class="contacts__c-head tl2">Реквизиты</p>
+                            <ul class="contacts__c-requisit-items">
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>Название:</strong></p>
+                                    <p class="txt16">ООО "mental health"</p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>ИНН:</strong></p>
+                                    <p class="txt16">1100220033</p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>КПП:</strong></p>
+                                    <p class="txt16">1100220033</p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>ОГРН:</strong></p>
+                                    <p class="txt16">1100220033</p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>Юридический адрес:</strong></p>
+                                    <p class="txt16">г. Ростов-на-Дону, ул. Днепростроевская 118/43
+                                    </p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>Фактический адрес:</strong></p>
+                                    <p class="txt16">г. Ростов-на-Дону, ул. Днепростроевская 118/43
+                                    </p>
+                                </li>
+                                <li class="contacts__c-requisit-item">
+                                    <p class="txt16"><strong>ФИО генерального директора:</strong>
+                                    </p>
+                                    <p class="txt16">Иванов Иван Иванович</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contacts__c-map" id="map">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <include src="./components/_footer.html"></include>
+    </div>
+</body>
+ <script type="text/javascript">
+     ymaps.ready(init);
+    function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [47.204572074287015, 39.67028549999995],
+            zoom: 16,
+            controls: ['fullscreenControl']
+        });
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'mental health'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: '../../assets/images/icons/map-marker.svg',
+            iconImageSize: [50, 50],
+
+        }),
+            myMap.geoObjects
+                .add(myPlacemark)
+    }
+ </script>
+</html>
