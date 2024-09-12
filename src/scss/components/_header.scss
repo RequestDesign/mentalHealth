@@ -1,0 +1,465 @@
+.header {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4rem 0 1.6rem;
+    z-index: 10;
+    transition: all .5s;
+    background-color: transparent;
+
+
+    &_cliped {
+        background-color: rgba(234, 239, 242, 0.6) !important;
+        -webkit-backdrop-filter: blur(52px);
+        backdrop-filter: blur(52px);
+    }
+
+    &_opened {
+        height: 100vh;
+        background-color: rgba(234, 239, 242, 0.6) !important;
+        -webkit-backdrop-filter: blur(52px);
+        backdrop-filter: blur(52px);
+    }
+
+    &__c {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &-nav {
+
+            @include small-tablet {
+                position: absolute;
+                top: 100%;
+                left: -2rem;
+                z-index: 10;
+
+
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                width: calc(100% + 4rem);
+                height: calc(100vh - 100% - 5.6rem);
+                box-sizing: border-box;
+                padding: 0 2rem;
+                gap: 6.1rem;
+
+                overflow: auto;
+                transition: all .5s;
+                transform: translateX(-100%);
+                visibility: hidden;
+                opacity: 0;
+
+
+
+            }
+
+            &-w {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                gap: 6.1rem;
+                overflow: auto;
+            }
+
+            &_opened {
+
+                @include small-tablet {
+
+                    transform: translateX(0);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+
+
+            &-call {
+                display: none;
+                width: fit-content;
+
+                @include small-tablet {
+                    display: block;
+                }
+            }
+
+            &-links {
+                display: flex;
+                gap: 4rem;
+
+
+                @include small-tablet {
+                    margin-top: 6.1rem;
+                    flex-direction: column;
+                    gap: 5.5rem;
+
+                    & svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+
+
+                &-e {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.2rem;
+
+                    &:hover {
+                        color: $green;
+
+                        & svg {
+                            stroke: $green;
+                        }
+                    }
+
+                    &:active {
+                        color: $green;
+
+                        & svg {
+                            stroke: $green;
+                        }
+                    }
+
+                    & svg {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        transition: transform 1s;
+                    }
+
+                    @include small-tablet {
+                        & svg {
+                            transform: rotate(-90deg);
+                        }
+                    }
+
+                    &_opened {
+                        color: $green;
+
+                        & svg {
+                            stroke: $green;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            &-banner {
+                margin-top: auto;
+                display: none;
+                width: 100%;
+                height: 50rem;
+                background-color: $green;
+                box-sizing: border-box;
+                padding: 4.8rem 1.2rem;
+                border-radius: 2.4rem;
+                color: $white;
+                background-image: url(../../assets/images/identify-problem-bg.svg);
+                background-size: 110%;
+                background-repeat: no-repeat;
+                background-position: 156% 90%;
+
+                & div p:last-of-type {
+                    width: 80%;
+                }
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+
+                @include small-tablet {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4.8rem;
+                    align-items: flex-start;
+                }
+            }
+
+        }
+
+
+        &-call {
+            @include small-tablet {
+                display: none;
+            }
+        }
+
+        &-nav-drop-down {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid $blue;
+            box-sizing: content-box;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+
+            @include small-tablet {
+                display: flex;
+                z-index: 20;
+
+            }
+
+            & span {
+                display: block;
+                width: 4rem;
+                height: 1px;
+                background-color: $blue;
+                transition: all .5s;
+            }
+
+            &_opened {
+                gap: 1.5rem;
+
+                & span {
+                    opacity: 0;
+                    width: 4.7rem;
+                    margin-left: 1.5rem;
+
+                    &:first-of-type {
+                        opacity: 1;
+                        transform: rotate(45deg);
+                        transform-origin: left top;
+                    }
+
+                    &:last-of-type {
+                        opacity: 1;
+                        transform: rotate(-45deg);
+                        transform-origin: left bottom;
+
+
+                    }
+                }
+            }
+
+        }
+
+        &-services-desk {
+            position: absolute;
+            top: calc(100% + 1.6rem);
+            overflow: hidden;
+            height: 542rem;
+            width: 100%;
+            opacity: 0;
+            transition: all .5s;
+            transform: translate(0, -20%);
+            visibility: hidden;
+
+            @include small-tablet {
+                display: none !important;
+
+            }
+
+            &_opened {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
+            &-c {
+                display: grid;
+                grid-template-columns: 25% 75%;
+                grid-template-rows: 54.2rem;
+                border-radius: 3rem;
+                overflow: hidden;
+
+                &-left {
+                    box-sizing: border-box;
+                    padding: 3.2rem;
+                    background-color: $green;
+
+                    &-w {
+                        height: 100%;
+                        overflow: auto;
+
+                        &::-webkit-scrollbar {
+                            width: 3px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: $light-gray;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $white;
+                        }
+                    }
+
+                    &-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        color: $white;
+
+
+                        &-e {
+                            width: fit-content;
+                            cursor: pointer;
+
+                            & hr {
+                                width: 0;
+                                transition: all .5s;
+                                height: 2px;
+                                background-color: $white;
+                                margin-top: 0.5rem;
+                                border: none;
+                                margin: 0;
+
+                            }
+
+                            &:hover hr {
+                                width: 100%;
+                            }
+
+                            &_active {
+                                & hr {
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                &-right {
+                    box-sizing: border-box;
+                    padding: 3.2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    background-color: $white;
+
+                    &-w {
+                        overflow: auto;
+                        height: 100%;
+                    }
+
+                    &-list {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        justify-content: space-between;
+                        gap: 1.2rem 6rem;
+
+                        &-e {
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $green;
+                            }
+                        }
+                    }
+
+                    &-banner {
+                        width: 100%;
+                        height: 15.8rem;
+                        margin-top: auto;
+                        background-color: $green;
+                        box-sizing: border-box;
+                        padding: 2.4rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-radius: 2.4rem;
+                        color: $white;
+                        background-image: url(../../assets/images/identify-problem-bg.svg);
+                        background-size: 50%;
+                        background-repeat: no-repeat;
+                        background-position: -24% 50%;
+
+                        & div p:last-of-type {
+                            width: 80%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &-services-mob {
+            position: absolute;
+            background-color: $white;
+            top: -4rem;
+            width: 100vw;
+            height: 100vh;
+            left: -2rem;
+            z-index: 10;
+            visibility: hidden;
+            opacity: 0;
+            transform: translate(100%, 0);
+            transition: all .5s;
+
+            &_opened {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
+            &-c {
+                height: 100%;
+                box-sizing: border-box;
+                padding: 4rem 2rem;
+
+                &-scroll {
+                    overflow: auto;
+                    height: 100%;
+                    margin-top: 6.1rem;
+
+                    &-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6.1rem;
+
+                        &-e {
+                            display: grid;
+
+                            grid-template-columns: auto min-content;
+                            grid-template-rows: auto 0fr;
+                            transition: all .5s;
+
+                            &-btn {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+
+                            & svg {
+                                width: 2.8rem;
+                                height: 2.8rem;
+                                transition: all .5;
+                            }
+
+                            &_active {
+                                color: $green;
+                                grid-template-rows: auto 1fr;
+
+                                & svg {
+                                    transform: rotate(180deg);
+                                }
+                            }
+
+                            &-w {
+
+                                overflow: hidden;
+                                grid-column: 1 / span 2;
+
+                                &-list {
+                                    margin-top: 4.8rem;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4rem;
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

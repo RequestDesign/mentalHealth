@@ -1,0 +1,97 @@
+.contacts-main {
+    margin-top: 20rem;
+}
+.contacts{
+    margin-top: 2.4rem;
+}
+
+.contacts__c {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 58rem;
+    gap: 2.4rem;
+
+    @include small-tablet {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 45rem;
+        gap: 3.2rem;
+    }
+
+    &-requisit,
+    &-info {
+        padding: 6.4rem;
+        box-sizing: border-box;
+        border-radius: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        background-color: $white;
+
+        @include small-tablet {
+            padding: 6.4rem 3.1rem;
+
+        }
+    }
+
+    &-info {
+
+        &-body {
+            margin-bottom: 1.6rem;
+            font-family: Geometria;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 110%;
+            text-align: left;
+
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+            & img{
+                width: 4rem;
+                height: 4rem;
+                @include small-tablet {
+                   
+        
+                }
+            }
+            
+        }
+    }
+
+    &-requisit {
+
+        &-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        &-item {
+            display: grid;
+            grid-template-columns: 0.9fr 1.3fr;
+            @include small-tablet {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+
+    }
+
+    &-map {
+
+        grid-column: 1 / span 2;
+        border-radius: 4rem;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        @include small-tablet {
+            grid-column: 1;
+        }
+    }
+}
