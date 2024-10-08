@@ -828,10 +828,10 @@ function catalogPsyhologist() {
       console.log(selectorTopText);
     }
 
-    showMoreItem(containerCost, 4);
+    /* showMoreItem(containerCost, 4);
     showMoreItem(containerHelp, 4);
     showMoreItem(containerImportant, 4);
-    showMoreItem(containerAllFilters, 6);
+    showMoreItem(containerAllFilters, 6); */
 
     updateClearButton(containerCost);
     updateClearButton(containerHelp);
