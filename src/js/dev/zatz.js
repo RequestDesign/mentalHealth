@@ -78,7 +78,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* header */
 
+    base()
+
+
+
 
 
 })
+/* base */
+function base() {
+    const btns = $('.drop-down-target');
+    if (!btns) return
+    btns.on('click', (e) => {
+        e.currentTarget.closest('.drop-down-container').classList.toggle('_opened')
+    })
 
+
+}
+/* base */

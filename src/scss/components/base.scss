@@ -1,0 +1,221 @@
+.base {
+
+    &__c {
+        &-search {
+            margin: 2.4rem 0 6rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 3.2rem;
+
+            @include small-tablet {
+                gap: 0;
+            }
+
+            & input {
+                background-image: url(./assets/images/icons/search.svg);
+                background-repeat: no-repeat;
+                background-size: 2.4rem;
+                background-position: 3.2rem 2.1rem;
+                padding-left: 7rem;
+
+                @include small-tablet {
+                    background-size: 4.8rem;
+
+                    padding-left: 10rem;
+                }
+            }
+
+        }
+
+        &-body {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 37.6rem;
+            gap: 3.2rem;
+            grid-template-areas:
+                'main aside';
+
+            @include small-tablet {
+                grid-template-columns: 100%;
+                gap: 6.4rem;
+                grid-template-areas:
+                    'aside'
+                    'main';
+            }
+
+            &-main {
+                grid-area: main;
+                display: flex;
+                flex-direction: column;
+                gap: 8rem;
+
+                &-e {
+
+
+
+                    @include small-tablet {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 4rem;
+                    }
+                    & .base__c-body-main-e-hide{
+                        display: none;
+                    }
+                    & .base__c-body-main-e-showmore{
+                        display: block;
+                    }
+
+                    &._opened {
+                        & .base__c-body-main-e-items {
+                            grid-template-rows: min-content 1fr;
+
+                        }
+                        & .base__c-body-main-e-hide{
+                            display: block;
+                        }
+                        & .base__c-body-main-e-showmore{
+                            display: none;
+                        }
+                    }
+
+                    &-top {
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        margin-bottom: 4rem;
+
+                        @include small-tablet {
+                            margin-bottom: 2rem;
+                        }
+
+                    }
+
+                    &-items {
+                        display: grid;
+                        grid-template-rows: min-content 0fr;
+                        transition: all .5s;
+                        gap: 3.2rem;
+
+
+                        &-list {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 3.2rem;
+                            overflow: hidden;
+
+                            @include small-tablet {
+                                grid-template-columns: 100%;
+                            }
+
+                            & .articles__card {
+                                padding: 2.4rem;
+
+                                &-date {
+                                    top: 3.5rem;
+                                    left: 3.5rem;
+
+                                }
+
+                                &-img {
+                                    height: 28rem;
+
+                                    @include small-tablet {
+                                        height: 36rem;
+                                    }
+                                }
+
+                                &-title {
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: -moz-box;
+                                    -moz-box-orient: vertical;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 4;
+                                    -webkit-box-orient: vertical;
+                                    line-clamp: 4;
+                                    box-orient: vertical;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+            &-aside {
+                height: fit-content;
+                position: sticky;
+                top: 15rem;
+                grid-area: aside;
+                overflow: auto;
+
+                @include small-tablet {
+                    top: 0;
+                    position: relative;
+                }
+
+                &-wrp {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    background-color: $white;
+                    border-radius: 4rem;
+                    padding: 2.4rem;
+                    box-sizing: border-box;
+
+                    @include small-tablet {
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        background-color: transparent;
+                        border-radius: 0;
+                    }
+                }
+
+                &-e {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    @include small-tablet {
+                        padding: 3rem;
+                        box-sizing: border-box;
+                        background-color: $white;
+                        border-radius: 6rem;
+                        flex-direction: column;
+                        gap: 2rem;
+
+
+                    }
+
+                    &:hover {
+                        color: $green;
+                    }
+
+                    &-count {
+                        font-weight: 400;
+                        color: $green;
+
+                        &::before {
+                            content: '(';
+
+                            @include small-tablet {
+                                content: '';
+                            }
+                        }
+
+                        &::after {
+                            content: ')';
+
+                            @include small-tablet {
+                                content: ' статей';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
