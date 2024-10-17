@@ -19,6 +19,7 @@ export const modules = {};
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
+  gsap.config({nullTargetWarn:false});
   try {
     popup();
   } catch {}
@@ -476,14 +477,14 @@ function minMaxRange(item) {
   if (item.dataset.min) {
     currentMinArr = item.dataset.min;
     currentMinStart = [+currentMinArr];
-    console.log(currentMinArr);
+  /*   console.log(currentMinArr); */
   } else {
     currentMinStart = [25];
   }
   if (item.dataset.max) {
     currentMaxArr = item.dataset.max;
     currentMaxStart = [+currentMaxArr];
-    console.log(currentMaxArr);
+   /*  console.log(currentMaxArr); */
   } else {
     currentMinStart = [65];
   }
@@ -825,7 +826,7 @@ function catalogPsyhologist() {
       showMoreItem(containerAllFilters, 6);
       showMoreItem(containerImportant, 4);
       selectorTopText.val('');
-      console.log(selectorTopText);
+     /*  console.log(selectorTopText); */
     }
 
     /* showMoreItem(containerCost, 4);

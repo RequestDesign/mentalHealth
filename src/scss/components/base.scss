@@ -67,10 +67,7 @@
                     }
 
                     &._opened {
-                        & .base__c-body-main-e-items {
-                            grid-template-rows: min-content 1fr;
-
-                        }
+                       
                         & .base__c-body-main-e-hide{
                             display: block;
                         }
@@ -92,17 +89,14 @@
                     }
 
                     &-items {
-                        display: grid;
-                        grid-template-rows: min-content 0fr;
-                        transition: all .5s;
-                        gap: 3.2rem;
+                       
 
 
                         &-list {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             gap: 3.2rem;
-                            overflow: hidden;
+                          /*   overflow: hidden; */
 
                             @include small-tablet {
                                 grid-template-columns: 100%;

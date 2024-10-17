@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Общая услуги</title>
+    <title>База знаний</title>
 <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
 
 <body>
@@ -1312,10 +1312,16 @@
                     <form class="base__c-search">
                         <label class=" input-group">
                             <span class="form__input-wrapper">
-                                <input class="input--name  _input-black" type="text" autocomplete="off" name="form[]"
-                                    placeholder="Поиск по базе знаний" />
+                                <input class="base-search  _input-black" type="text" autocomplete="off"
+                                    name="search" placeholder="Поиск по базе знаний" />
                             </span>
-                            <span class="error-span"></span>
+                            <span class="input-variants ">
+                                <span class="input-variants-wrp">
+                                    <span class="input-variants-list txt20">
+                                      <span class="input-variants-list-e"></span>
+                                    </span>
+                                </span>
+                            </span>
                         </label>
                         <div class="desktop">
                             <button class="button-border" type="submit">
@@ -1326,11 +1332,11 @@
                     <div class="base__c-body">
                         <div class="base__c-body-main">
                             <p class="tl3">К сожалению по вашему запросу ничего не нашлось /// плейсхолдер</p>
-                            <div class="base__c-body-main-e drop-down-container">
+                            <div class="base__c-body-main-e ">
                                 <div class="base__c-body-main-e-top">
                                     <h3 class="tl2">Лечение наркомании</h3>
                                     <div class="desktop">
-                                        <button class="button-shadow button-shadow--green drop-down-target">
+                                        <button class="button-shadow button-shadow--green ">
                                             <span
                                                 class="base__c-body-main-e-showmore button-shadow-text txt16 txt16_caps"><span>999</span>
                                                 статей</span>
@@ -1348,7 +1354,7 @@
 
                                 </div>
                                 <div class="base__c-body-main-e-items">
-                                    <!-- тут первые три карточки -->
+
                                     <ul class="base__c-body-main-e-items-list">
                                         <li class="articles__card">
                                             <div class="articles__card-date txt16">29.04.2024</div>
@@ -1363,24 +1369,10 @@
                                             <div class="articles__card-type txt20">Статья</div>
                                         </li>
                                     </ul>
-                                    <ul class="base__c-body-main-e-items-list">
-                                        <!-- тут остальные -->
-                                        <li class="articles__card">
-                                            <div class="articles__card-date txt16">29.04.2024</div>
-                                            <div class="articles__card-img">
-                                                <img src="./assets/images/articles-card-img-2.webp" alt="">
-                                            </div>
-                                            <div class="articles__card-title tl4">
-                                                Как сохранить спокойствие и здравомыслие в условиях общей паники и тонн
-                                                тревожной
-                                                информации
-                                            </div>
-                                            <div class="articles__card-type txt20">Статья</div>
-                                        </li>
-                                    </ul>
+
                                 </div>
                                 <div class="mobile">
-                                    <button class="button-shadow button-shadow--green drop-down-target">
+                                    <button class="button-shadow button-shadow--green ">
                                         <span
                                             class="base__c-body-main-e-showmore button-shadow-text txt16 txt16_caps"><span>999</span>
                                             статей</span>
@@ -1397,7 +1389,7 @@
                                 </div>
 
                             </div>
-                            
+
                         </div>
 
                         <aside class="base__c-body-aside">

@@ -78,21 +78,69 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* header */
 
-    base()
-
+    initBaseSerach()
 
 
 
 
 })
 /* base */
-function base() {
+/* function base() {
     const btns = $('.drop-down-target');
     if (!btns) return
     btns.on('click', (e) => {
         e.currentTarget.closest('.drop-down-container').classList.toggle('_opened')
     })
 
-
-}
+} */
 /* base */
+const testVariants = [
+    'qwe',
+    'ewq',
+    'wqe',
+    '123'
+]
+
+function initBaseSerach() {
+    const target = $('.base-search')
+
+    if (!target) return
+
+    const parent = target.closest('label'),
+        variants = parent.find('.input-variants'),
+        variantsList = variants.find('.input-variants-list'),
+        variantCard = (v) => { return ` <span class="input-variants-list-e">${v}</span>` }
+
+    target.on('input', (e) => {
+        openAutocomplete(e.currentTarget.value)
+
+    })
+
+    target.on('blur', () => {
+        variants.removeClass('_opened')
+        variantsList.empty()
+    })
+
+    function openAutocomplete(val) {
+        //это чисто для тестов
+        if (val.length <= 0) {
+            variants.removeClass('_opened')
+            return
+        }
+
+        const v = testVariants.filter(e => e.includes(val))
+
+        if (v.length > 0) {
+            variants.addClass('_opened')
+            variantsList.empty()
+            v.forEach((el) => {
+                variantsList.append(variantCard(el))
+
+            })
+
+        } else {
+            variants.removeClass('_opened')
+            variantsList.empty()
+        }
+    }
+}

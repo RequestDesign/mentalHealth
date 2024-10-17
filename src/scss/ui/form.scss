@@ -2,6 +2,67 @@
   position: relative;
   width: 100%;
   display: block;
+
+  & .input-variants {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% - 6rem);
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    transition: max-height .5s;
+    overflow: hidden;
+    border-radius: 0 0 1.6rem 1.6rem;
+    display: flex;
+    border: .2rem solid $gray;
+    border-color: transparent;
+    border-top: none;
+    background-color: $bg;
+
+    &._opened {
+     border-color: $gray;
+      max-height: 40rem;
+
+      @include small-tablet {
+        max-height: 70rem;
+      }
+    }
+
+    &-wrp {
+      width: 100%;
+     
+     
+      padding: 2rem 2rem 0 6rem;
+      margin-top: 6rem;
+      margin-bottom: 2rem;
+      box-sizing: border-box;
+     
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $gray;
+        border-radius: 100px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $blue;
+        border-radius: 100px;
+      }
+
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+    }
+
+  }
 }
 
 .input-group input,
@@ -14,11 +75,16 @@
   font-weight: 500;
   font-size: 2rem;
   line-height: 130%;
+  position: relative;
+  z-index: 2;
+
   &::placeholder {
     opacity: 1;
     transition: color 0.5s;
   }
+
   color: $black;
+
   @include small-tablet {
     padding: 3.2rem 4.8rem;
     font-size: 2.8rem;
@@ -27,23 +93,27 @@
 
   &._input-black {
     border: 0.2rem solid $gray;
+
     &::placeholder {
       color: $gray;
     }
 
-    &:focus{
+    &:focus {
       color: $black;
       border: 0.2rem solid $black;
+
       &::placeholder {
         opacity: 1;
         color: $black;
       }
     }
-    
+
   }
+
   &._input-white {
     border: 0.2rem solid $white;
     color: $white;
+
     &::placeholder {
       color: $white;
     }
@@ -51,17 +121,19 @@
     &:focus {
       color: $white;
       border: 0.2rem solid $white;
+
       &::placeholder {
         opacity: 1;
         color: $white;
       }
     }
   }
+
 }
 
 ._form-error input,
 ._form-error textarea {
-  color: #e91d1d!important;
+  color: #e91d1d !important;
 }
 
 .error-span {
