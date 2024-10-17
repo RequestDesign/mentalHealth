@@ -98,6 +98,19 @@ const testVariants = [
     'qwe',
     'ewq',
     'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
+    'wqe',
     '123'
 ]
 
@@ -112,13 +125,22 @@ function initBaseSerach() {
         variantCard = (v) => { return ` <span class="input-variants-list-e">${v}</span>` }
 
     target.on('input', (e) => {
+        //показ  вариантов
         openAutocomplete(e.currentTarget.value)
 
     })
-
-    target.on('blur', () => {
+    parent.on('mouseleave',()=>{
+        //закрытие выбора
         variants.removeClass('_opened')
         variantsList.empty()
+    })
+  
+    variants.on('click', (e) => {
+        //клик на варианте
+        if (e.target.classList.contains('input-variants-list-e')) {
+          target.val(e.target.textContent)
+          variants.removeClass('_opened')
+        }
     })
 
     function openAutocomplete(val) {
@@ -135,7 +157,6 @@ function initBaseSerach() {
             variantsList.empty()
             v.forEach((el) => {
                 variantsList.append(variantCard(el))
-
             })
 
         } else {

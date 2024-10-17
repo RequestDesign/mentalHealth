@@ -6,7 +6,7 @@
   & .input-variants {
     position: absolute;
     z-index: 1;
-    top: calc(100% - 6rem);
+    top: calc(100% - 3rem);
     left: 0;
     width: 100%;
     max-height: 0;
@@ -33,7 +33,7 @@
      
      
       padding: 2rem 2rem 0 6rem;
-      margin-top: 6rem;
+      margin-top: 2rem;
       margin-bottom: 2rem;
       box-sizing: border-box;
      
@@ -59,6 +59,10 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      &-e:hover{
+        cursor: pointer;
+        color: $green;
+      }
 
     }
 

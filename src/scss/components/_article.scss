@@ -7,10 +7,26 @@
 
   &__head {
     margin-bottom: 6rem;
-
-    .article__text {
-      margin-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    &-tags{
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
+    &-tag{
+      background-color: transparent;
+      border: .2rem solid $blue;
+      border-radius: 1.6rem;
+      padding: .8rem 1.6rem;
+      color: $blue;
+      width: fit-content;
+      font-weight: 500;
+
+    }
+
+    
   }
 
   &__title {
@@ -42,6 +58,22 @@
 
   &__date {
     margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    &-item{
+      display: flex;
+      gap: .8rem;
+      align-items: center;
+      & img{
+        width: 3.2rem;
+        height: 3.2rem;
+        @include small-tablet{
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
   }
 
   &__img {
