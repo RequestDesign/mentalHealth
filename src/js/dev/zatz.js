@@ -94,25 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 } */
 /* base */
-const testVariants = [
-    'qwe',
-    'ewq',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    'wqe',
-    '123'
-]
+
 
 function initBaseSerach() {
     const target = $('.base-search')
@@ -120,48 +102,16 @@ function initBaseSerach() {
     if (!target) return
 
     const parent = target.closest('label'),
-        variants = parent.find('.input-variants'),
-        variantsList = variants.find('.input-variants-list'),
-        variantCard = (v) => { return ` <span class="input-variants-list-e">${v}</span>` }
+        variants = parent.find('.input-variants')
+     
 
     target.on('input', (e) => {
         //показ  вариантов
-        openAutocomplete(e.currentTarget.value)
-
+        variants.addClass('_opened')
     })
-    parent.on('mouseleave',()=>{
+    target.on('blur',()=>{
         //закрытие выбора
         variants.removeClass('_opened')
-        variantsList.empty()
-    })
-  
-    variants.on('click', (e) => {
-        //клик на варианте
-        if (e.target.classList.contains('input-variants-list-e')) {
-          target.val(e.target.textContent)
-          variants.removeClass('_opened')
-        }
     })
 
-    function openAutocomplete(val) {
-        //это чисто для тестов
-        if (val.length <= 0) {
-            variants.removeClass('_opened')
-            return
-        }
-
-        const v = testVariants.filter(e => e.includes(val))
-
-        if (v.length > 0) {
-            variants.addClass('_opened')
-            variantsList.empty()
-            v.forEach((el) => {
-                variantsList.append(variantCard(el))
-            })
-
-        } else {
-            variants.removeClass('_opened')
-            variantsList.empty()
-        }
-    }
 }
