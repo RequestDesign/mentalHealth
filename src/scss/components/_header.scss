@@ -14,7 +14,7 @@
         backdrop-filter: blur(52px);
     }
 
-    &_opened {
+    &._opened {
         height: 100vh;
         background-color: rgba(234, 239, 242, 0.6) !important;
         -webkit-backdrop-filter: blur(52px);
@@ -30,28 +30,18 @@
         &-nav {
 
             @include small-tablet {
+                display: none;
                 position: absolute;
                 top: 100%;
                 left: -2rem;
                 z-index: 10;
-
-
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
                 width: calc(100% + 4rem);
                 height: calc(100vh - 100% - 5.6rem);
                 box-sizing: border-box;
                 padding: 0 2rem;
-                gap: 6.1rem;
-
                 overflow: auto;
-                transition: all .5s;
+                transition: transform .5s;
                 transform: translateX(-100%);
-                visibility: hidden;
-                opacity: 0;
-
-
 
             }
 
@@ -63,13 +53,11 @@
                 overflow: auto;
             }
 
-            &_opened {
+            &._opened {
 
                 @include small-tablet {
-
                     transform: translateX(0);
-                    visibility: visible;
-                    opacity: 1;
+                 
                 }
             }
 
@@ -134,7 +122,7 @@
                         }
                     }
 
-                    &_opened {
+                    &._opened {
                         color: $green;
 
                         & svg {
@@ -213,7 +201,7 @@
                 transition: all .5s;
             }
 
-            &_opened {
+            &._opened {
                 gap: 1.5rem;
 
                 & span {
@@ -240,24 +228,23 @@
         }
 
         &-services-desk {
+            display: none;
             position: absolute;
             top: calc(100% + 1.6rem);
             overflow: hidden;
-            height: 542rem;
+            height: 54rem;
             width: 100%;
-            opacity: 0;
-            transition: all .5s;
-            transform: translate(0, -20%);
-            visibility: hidden;
+           
+            transition: transform .5s;
+            transform: translate(0, -100%);
+
 
             @include small-tablet {
                 display: none !important;
 
             }
 
-            &_opened {
-                visibility: visible;
-                opacity: 1;
+            &._opened {
                 transform: translate(0, 0);
             }
 
@@ -282,11 +269,11 @@
                         }
 
                         &::-webkit-scrollbar-track {
-                            background-color: $light-gray;
+                            background-color: $gray;
                         }
 
                         &::-webkit-scrollbar-thumb {
-                            background-color: $white;
+                            background-color: $white ;
                         }
                     }
 
@@ -316,7 +303,7 @@
                                 width: 100%;
                             }
 
-                            &_active {
+                            &._opened {
                                 & hr {
                                     width: 100%;
                                 }
@@ -332,28 +319,40 @@
                     display: flex;
                     flex-direction: column;
                     gap: 2rem;
-
                     background-color: $white;
 
-                    &-w {
-                        overflow: auto;
+                    &-wrp {
+                        overflow: hidden;
                         height: 100%;
+
                     }
 
                     &-list {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr;
-                        justify-content: space-between;
-                        gap: 1.2rem 6rem;
+                        display: flex;
+                        flex-wrap: nowrap;
+
+                        height: 100%;
 
                         &-e {
-                            cursor: pointer;
+                            min-width: 100%;
+                            flex-grow: 1;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-auto-rows: min-content;
+                            justify-content: space-between;
+                            gap: 1.2rem 6rem;
 
-                            &:hover {
-                                color: $green;
+                            &-link {
+                                cursor: pointer;
+
+                                &:hover {
+                                    color: $green;
+                                }
                             }
                         }
                     }
+
+
 
                     &-banner {
                         width: 100%;
@@ -382,23 +381,26 @@
         }
 
         &-services-mob {
-            position: absolute;
-            background-color: $white;
-            top: -4rem;
-            width: 100vw;
-            height: 100vh;
-            left: -2rem;
-            z-index: 10;
-            visibility: hidden;
-            opacity: 0;
-            transform: translate(100%, 0);
-            transition: all .5s;
-
-            &_opened {
-                visibility: visible;
-                opacity: 1;
-                transform: translate(0, 0);
+            @include desktop{
+                display: none !important;
             }
+            @include small-tablet {
+                display: none;
+                position: absolute;
+                background-color: $white;
+                top: -4rem;
+                width: 100vw;
+                height: 100vh;
+                left: -2rem;
+                z-index: 10;
+                transform: translate(100%, 0);
+                transition: all .5s;
+
+                &._opened {
+                    transform: translate(0, 0);
+                }
+            }
+
 
             &-c {
                 height: 100%;
@@ -419,7 +421,7 @@
                             display: grid;
 
                             grid-template-columns: auto min-content;
-                            grid-template-rows: auto 0fr;
+                            grid-template-rows: min-content 0fr;
                             transition: all .5s;
 
                             &-btn {
@@ -433,9 +435,9 @@
                                 transition: all .5;
                             }
 
-                            &_active {
+                            &._active {
                                 color: $green;
-                                grid-template-rows: auto 1fr;
+                                grid-template-rows: min-content 1fr;
 
                                 & svg {
                                     transform: rotate(180deg);

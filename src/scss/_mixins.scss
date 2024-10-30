@@ -10,6 +10,12 @@
   }
 }
 
+@mixin desktop {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
+
 @mixin sizes($width, $height) {
   max-width: $width;
   width: 100%;
