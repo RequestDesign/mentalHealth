@@ -67,7 +67,7 @@ const missionLineAnimate = () => {
   observer.observe(line);
 };
 
-const psychoologistInfoOrder = () => {
+/* const psychoologistInfoOrder = () => {
   const section = document.querySelector('.psychologist-info__container'),
     block = section.querySelector('.psychologist-info__right');
 
@@ -89,7 +89,7 @@ const psychoologistInfoOrder = () => {
       block.style.position = 'static';
     }
   });
-};
+}; */
 
 const psychoologistInfoAccordion = () => {
   const block = document.querySelector('.psychologist-info__left'),
