@@ -50,7 +50,10 @@
                 flex-direction: column;
                 flex-grow: 1;
                 gap: 6.1rem;
-                overflow: auto;
+                @include small-tablet{
+                    overflow: auto;
+
+                }
             }
 
             &._opened {
